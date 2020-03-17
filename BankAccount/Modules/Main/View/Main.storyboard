@@ -153,33 +153,21 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="103.5" height="60"/>
                                                 <color key="backgroundColor" red="0.92447286839999998" green="0.81347483399999998" blue="0.82664394379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="time"/>
-                                                <connections>
-                                                    <action selector="pressedButton:" destination="vTa-nU-SGB" eventType="touchUpInside" id="mAg-mh-fTc"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hhk-3D-fXh">
                                                 <rect key="frame" x="103.5" y="0.0" width="103.5" height="60"/>
                                                 <color key="backgroundColor" red="0.92447286839999998" green="0.81347483399999998" blue="0.82664394379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="message"/>
-                                                <connections>
-                                                    <action selector="pressedButton:" destination="vTa-nU-SGB" eventType="touchUpInside" id="Tb9-L0-WON"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGu-Nl-cEt">
                                                 <rect key="frame" x="207" y="0.0" width="103.5" height="60"/>
                                                 <color key="backgroundColor" red="0.92447286839999998" green="0.81347483399999998" blue="0.82664394379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="account"/>
-                                                <connections>
-                                                    <action selector="pressedButton:" destination="vTa-nU-SGB" eventType="touchUpInside" id="pG9-j3-gs2"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLa-QX-eor">
                                                 <rect key="frame" x="310.5" y="0.0" width="103.5" height="60"/>
                                                 <color key="backgroundColor" red="0.92447286839999998" green="0.81347483399999998" blue="0.82664394379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="close"/>
-                                                <connections>
-                                                    <action selector="pressedButton:" destination="vTa-nU-SGB" eventType="touchUpInside" id="gfc-fD-D7c"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
