@@ -32,6 +32,8 @@ class Main: UIViewController {
         super.viewDidLoad()
 
         setupTabBarView()
+        let nibName = UINib(nibName: "CustomTableViewCell", bundle: nil)
+        tableView.register(nibName, forCellReuseIdentifier: "customCell")
     }
     
     
@@ -47,10 +49,10 @@ extension Main: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CustomTableViewCell else { return UITableViewCell.init() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as? CustomTableViewCell else { return UITableViewCell.init() }
         
-            cell.moneyLabel?.text = "-$120.9\(indexPath.row)"
-            cell.onlineLabel?.text = "Online"
+            cell.moneyLabel.text = "-$120.9\(indexPath.row)"
+            cell.onlineLabel.text = "Online"
 
         return cell
     }
@@ -58,6 +60,7 @@ extension Main: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Layout.heightForRowAt.rawValue
     }
+    
     
     
 }
