@@ -14,7 +14,7 @@
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCell" rowHeight="132" id="GuF-YY-s6S" customClass="CustomTableViewCell" customModule="BankAccount" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="487" height="132"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GuF-YY-s6S" id="9Qd-FL-SHb">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GuF-YY-s6S" id="9Qd-FL-SHb">
                 <rect key="frame" x="0.0" y="0.0" width="487" height="131.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -31,18 +31,14 @@
                         <rect key="frame" x="111" y="26" width="96" height="36"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="36" id="PBV-Bq-liN"/>
-                            <constraint firstAttribute="width" constant="96" id="XSJ-7u-Fgi"/>
+                            <constraint firstAttribute="width" priority="750" constant="96" id="XSJ-7u-Fgi"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-$120.93" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tnr-Q2-Vif">
-                        <rect key="frame" x="212" y="26" width="199" height="35"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="199" id="9dv-mV-ucw"/>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="Vfg-Pa-PW5"/>
-                        </constraints>
+                        <rect key="frame" x="217" y="26" width="250" height="36"/>
                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -61,12 +57,14 @@
                 <color key="backgroundColor" red="0.71003466839999996" green="0.47045683859999998" blue="0.58002930880000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="8cU-MJ-fUm" firstAttribute="bottom" secondItem="vgK-9U-3zl" secondAttribute="bottom" id="0ns-0N-rQh"/>
-                    <constraint firstItem="Tnr-Q2-Vif" firstAttribute="top" secondItem="e0C-LZ-ytv" secondAttribute="top" id="1ae-6i-cxX"/>
+                    <constraint firstItem="Tnr-Q2-Vif" firstAttribute="centerY" secondItem="e0C-LZ-ytv" secondAttribute="centerY" id="7jX-zV-GOQ"/>
                     <constraint firstItem="vgK-9U-3zl" firstAttribute="leading" secondItem="9Qd-FL-SHb" secondAttribute="leading" constant="10" id="FAI-GJ-lbH"/>
-                    <constraint firstAttribute="trailing" secondItem="Tnr-Q2-Vif" secondAttribute="trailing" constant="20" id="PPU-7k-LKR"/>
+                    <constraint firstItem="8cU-MJ-fUm" firstAttribute="trailing" secondItem="e0C-LZ-ytv" secondAttribute="trailing" id="IQp-ar-hQh"/>
+                    <constraint firstAttribute="trailing" secondItem="Tnr-Q2-Vif" secondAttribute="trailing" constant="20" id="SJN-HJ-EsK"/>
                     <constraint firstItem="8cU-MJ-fUm" firstAttribute="leading" secondItem="e0C-LZ-ytv" secondAttribute="leading" id="TLK-qM-cyS"/>
+                    <constraint firstItem="Tnr-Q2-Vif" firstAttribute="leading" secondItem="e0C-LZ-ytv" secondAttribute="trailing" constant="10" id="VNa-kK-o06"/>
                     <constraint firstItem="vgK-9U-3zl" firstAttribute="centerY" secondItem="9Qd-FL-SHb" secondAttribute="centerY" id="aok-9y-TBT"/>
-                    <constraint firstItem="Tnr-Q2-Vif" firstAttribute="leading" secondItem="e0C-LZ-ytv" secondAttribute="trailing" constant="5" id="bl6-15-UDL"/>
+                    <constraint firstItem="Tnr-Q2-Vif" firstAttribute="top" secondItem="e0C-LZ-ytv" secondAttribute="top" id="quE-C1-38P"/>
                     <constraint firstItem="e0C-LZ-ytv" firstAttribute="leading" secondItem="vgK-9U-3zl" secondAttribute="trailing" constant="20" id="tDH-aO-yGd"/>
                     <constraint firstItem="e0C-LZ-ytv" firstAttribute="top" secondItem="vgK-9U-3zl" secondAttribute="top" id="zhg-pK-p7O"/>
                 </constraints>

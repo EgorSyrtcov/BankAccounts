@@ -51,7 +51,7 @@ extension Main: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: RegisterCell.customCell.rawValue, for: indexPath) as? CustomTableViewCell else { return UITableViewCell.init() }
             cell.backgroundColor = #colorLiteral(red: 0.7100346684, green: 0.4704568386, blue: 0.5800293088, alpha: 1)
-            cell.moneyLabel.text = "-$120121.9\(indexPath.row)"
+            cell.moneyLabel.text = "-$126530.9\(indexPath.row)"
             cell.onlineLabel.text = "Online"
 
         return cell
