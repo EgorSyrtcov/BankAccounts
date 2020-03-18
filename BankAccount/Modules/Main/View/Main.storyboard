@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vTa-nU-SGB">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,32 +15,32 @@
             <objects>
                 <viewController id="vTa-nU-SGB" customClass="Main" customModule="BankAccount" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cZN-IP-UxQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bmN-ZJ-hxS" userLabel="ContentView">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bank Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nP-bC-eyp">
-                                        <rect key="frame" x="115" y="72" width="184.5" height="36"/>
+                                        <rect key="frame" x="95.333333333333329" y="72" width="184.33333333333337" height="36"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PmZ-Sx-Htb" userLabel="CurrentBalanceView" customClass="CurrentBalanceView" customModule="BankAccount" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="128" width="394" height="150"/>
+                                        <rect key="frame" x="10" y="128" width="355" height="150"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="pLo-D1-wSI">
-                                                <rect key="frame" x="35" y="40" width="239.5" height="70.5"/>
+                                                <rect key="frame" x="35.000000000000014" y="39.999999999999993" width="239.33333333333337" height="70.333333333333314"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Balance - 03/15/2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xW4-cO-hyP">
-                                                        <rect key="frame" x="0.0" y="0.0" width="239.5" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="239.33333333333334" height="20.333333333333332"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                         <color key="textColor" red="0.71003466839999996" green="0.47045683859999998" blue="0.58002930880000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 1.200.13" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1a6-WD-J5I">
-                                                        <rect key="frame" x="0.0" y="34.5" width="239.5" height="36"/>
+                                                        <rect key="frame" x="0.0" y="34.333333333333343" width="239.33333333333334" height="36"/>
                                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="30"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -60,7 +60,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fjb-vf-B2k">
-                                        <rect key="frame" x="8" y="283" width="398" height="509"/>
+                                        <rect key="frame" x="8" y="283" width="359" height="425"/>
                                         <color key="backgroundColor" red="0.71003466839999996" green="0.47045683859999998" blue="0.58002930880000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="dataSource" destination="vTa-nU-SGB" id="zhh-vM-jNc"/>
@@ -82,7 +82,7 @@
                                 </constraints>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rkx-oX-e45" userLabel="TabBarView">
-                                <rect key="frame" x="0.0" y="802" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="718" width="375" height="60"/>
                                 <color key="backgroundColor" red="0.92447286839999998" green="0.81347483399999998" blue="0.82664394379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="rty-qw-zNG"/>
