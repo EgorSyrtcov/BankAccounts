@@ -32,10 +32,13 @@ class Main: UIViewController {
         super.viewDidLoad()
 
         setupTabBarView()
+        setupRegisterTableView()
+    }
+    
+    private func setupRegisterTableView() {
         let nibName = UINib(nibName: "CustomTableViewCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "customCell")
     }
-    
     
     private func setupTabBarView() {
         tabBarView.layer.cornerRadius = Layout.cornerRadiusTabBarView.rawValue
@@ -60,8 +63,5 @@ extension Main: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Layout.heightForRowAt.rawValue
     }
-    
-    
-    
 }
 

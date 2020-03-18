@@ -77,8 +77,7 @@
 			children = (
 				2EBC83EB241FC34F00698837 /* Main.storyboard */,
 				2EE64EB82420E33400D3E29E /* CurrentBalanceView.swift */,
-				2EF2C4332421F2F0004BEC91 /* CustomTableViewCell.swift */,
-				2EF2C4342421F2F0004BEC91 /* CustomTableViewCell.xib */,
+				2EF2C43924222C0E004BEC91 /* CustomTableCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -184,6 +183,15 @@
 				2EEB0004241FB2C300B0C74B /* Splash */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		2EF2C43924222C0E004BEC91 /* CustomTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				2EF2C4332421F2F0004BEC91 /* CustomTableViewCell.swift */,
+				2EF2C4342421F2F0004BEC91 /* CustomTableViewCell.xib */,
+			);
+			path = CustomTableCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
