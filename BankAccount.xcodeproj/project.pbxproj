@@ -49,6 +49,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2EEAFC732423AE28008DFE46 /* CurrentViewScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2EEAFC6E24239F24008DFE46 /* CurrentView.xib */,
+				2EEAFC7024239F64008DFE46 /* CurrentView.swift */,
+			);
+			path = CurrentViewScreen;
+			sourceTree = "<group>";
+		};
 		2EEB0000241FB25D00B0C74B /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -78,8 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				2EBC83EB241FC34F00698837 /* Main.storyboard */,
-				2EEAFC6E24239F24008DFE46 /* CurrentView.xib */,
-				2EEAFC7024239F64008DFE46 /* CurrentView.swift */,
+				2EEAFC732423AE28008DFE46 /* CurrentViewScreen */,
 				2EF2C43924222C0E004BEC91 /* CustomTableCell */,
 			);
 			path = View;

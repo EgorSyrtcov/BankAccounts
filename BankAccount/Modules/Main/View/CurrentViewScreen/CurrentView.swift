@@ -8,11 +8,18 @@
 
 import UIKit
 
+@IBDesignable
 class CurrentView: UIView {
     
-    @IBOutlet var view: UIView! {
+    @IBOutlet var view: UIView!
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    @IBInspectable var cornerRadius: CGFloat = 0 {
         didSet {
-            self.view.layer.cornerRadius = Layout.mainViewCornerRadius.rawValue
+            self.view.layer.cornerRadius = cornerRadius
         }
     }
     
