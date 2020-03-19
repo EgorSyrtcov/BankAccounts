@@ -27,37 +27,12 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PmZ-Sx-Htb" userLabel="CurrentBalanceView" customClass="CurrentBalanceView" customModule="BankAccount" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PmZ-Sx-Htb" userLabel="CurrentBalanceView" customClass="CurrentView" customModule="BankAccount" customModuleProvider="target">
                                         <rect key="frame" x="10" y="128" width="355" height="150"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="pLo-D1-wSI">
-                                                <rect key="frame" x="35.000000000000014" y="39.999999999999993" width="239.33333333333337" height="70.333333333333314"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Balance - 03/15/2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xW4-cO-hyP">
-                                                        <rect key="frame" x="0.0" y="0.0" width="239.33333333333334" height="20.333333333333332"/>
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                        <color key="textColor" red="0.71003466839999996" green="0.47045683859999998" blue="0.58002930880000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 1.200.13" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1a6-WD-J5I">
-                                                        <rect key="frame" x="0.0" y="34.333333333333343" width="239.33333333333334" height="36"/>
-                                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="30"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.92447286839999998" green="0.81347483399999998" blue="0.82664394379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="150" id="Jaj-xS-U2M"/>
-                                            <constraint firstItem="pLo-D1-wSI" firstAttribute="leading" secondItem="PmZ-Sx-Htb" secondAttribute="leading" constant="35" id="cVP-fY-wxK"/>
-                                            <constraint firstItem="pLo-D1-wSI" firstAttribute="centerY" secondItem="PmZ-Sx-Htb" secondAttribute="centerY" id="rWt-8J-yCu"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="20"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fjb-vf-B2k">
                                         <rect key="frame" x="8" y="283" width="359" height="438"/>
@@ -94,7 +69,6 @@
                     <tabBarItem key="tabBarItem" title="" image="clock" id="j0n-RI-rmN"/>
                     <connections>
                         <outlet property="contentView" destination="bmN-ZJ-hxS" id="1qz-KH-9cY"/>
-                        <outlet property="currentBalanceView" destination="PmZ-Sx-Htb" id="oJY-43-Nsn"/>
                         <outlet property="tableView" destination="Fjb-vf-B2k" id="P37-4n-gBG"/>
                     </connections>
                 </viewController>
@@ -156,6 +130,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="EvL-h3-9a5" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cX5-fu-mwx">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

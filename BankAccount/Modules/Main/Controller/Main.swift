@@ -8,13 +8,6 @@
 
 import UIKit
 
-enum TabBarType: String {
-    case time
-    case message
-    case account
-    case close
-}
-
 enum Layout: CGFloat {
     case cornerRadiusTabBarView = 20
     case heightForRowAt = 120
@@ -28,16 +21,22 @@ enum RegisterCell: String {
 class Main: UIViewController {
     
     @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var tabBarView: UIView! {
-        didSet {
-            tabBarView.layer.cornerRadius = Layout.cornerRadiusTabBarView.rawValue
-        }
-    }
-    @IBOutlet weak var currentBalanceView: UIView!
+    @IBOutlet weak var currentView: UIView!
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             let nibName = UINib(nibName: "CustomTableViewCell", bundle: nil)
             tableView.register(nibName, forCellReuseIdentifier: RegisterCell.customCell.rawValue)
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setup()
+    }
+    
+    func setup() {
+        if let currentView = Bundle.main.loadNibNamed("CurrentView", owner: self, options: nil)?.first as? CurrentView {
+            contentView.addSubview(currentView)
         }
     }
 }
