@@ -14,29 +14,17 @@ enum Layout: CGFloat {
     case mainViewCornerRadius = 40
 }
 
-enum RegisterCell: String {
-    case customCell
+enum RegisterCell {
+    static let customCell = "customCell"
 }
 
 class Main: UIViewController {
     
     @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var currentView: UIView!
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             let nibName = UINib(nibName: "CustomTableViewCell", bundle: nil)
-            tableView.register(nibName, forCellReuseIdentifier: RegisterCell.customCell.rawValue)
-        }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setup()
-    }
-    
-    func setup() {
-        if let currentView = Bundle.main.loadNibNamed("CurrentView", owner: self, options: nil)?.first as? CurrentView {
-            contentView.addSubview(currentView)
+            tableView.register(nibName, forCellReuseIdentifier: RegisterCell.customCell)
         }
     }
 }
@@ -48,7 +36,7 @@ extension Main: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: RegisterCell.customCell.rawValue, for: indexPath) as? CustomTableViewCell else { return UITableViewCell.init() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: RegisterCell.customCell, for: indexPath) as? CustomTableViewCell else { return UITableViewCell.init() }
             cell.backgroundColor = #colorLiteral(red: 0.7100346684, green: 0.4704568386, blue: 0.5800293088, alpha: 1)
             cell.moneyLabel.text = "-$126530.9\(indexPath.row)"
             cell.onlineLabel.text = "Online"

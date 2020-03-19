@@ -27,9 +27,9 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PmZ-Sx-Htb" userLabel="CurrentBalanceView" customClass="CurrentView" customModule="BankAccount" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PmZ-Sx-Htb" userLabel="View" customClass="CurrentView" customModule="BankAccount" customModuleProvider="target">
                                         <rect key="frame" x="10" y="128" width="355" height="150"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.71003466839999996" green="0.47045683859999998" blue="0.58002930880000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="150" id="Jaj-xS-U2M"/>
                                         </constraints>
