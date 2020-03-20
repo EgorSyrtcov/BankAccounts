@@ -11,4 +11,9 @@ import UIKit
 
 class CurrentCell: UITableViewCell {
 
+    @IBOutlet weak var view: UIView! {
+        didSet {
+            view.layer.cornerRadius = 20
+        }
+    }
 }
