@@ -12,7 +12,7 @@ class CustomTableViewCell: UITableViewCell {
     
     @IBOutlet weak var mainImage: UIImageView! {
         didSet {
-            self.mainImage.layer.cornerRadius = Layout.mainViewCornerRadius
+            self.mainImage.layer.cornerRadius = Layout.imageCornerRadiusInCustomCell
         }
     }
     @IBOutlet weak var onlineLabel: UILabel!

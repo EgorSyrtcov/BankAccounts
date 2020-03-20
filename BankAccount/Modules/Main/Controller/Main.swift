@@ -9,9 +9,9 @@
 import UIKit
 
 enum Layout {
-    static let currentRadiusCell: CGFloat = 120
-    static let customRadiusCell: CGFloat = 100
-    static let mainViewCornerRadius: CGFloat = 40
+    static let currentCellHeight: CGFloat = 120
+    static let customCellHeight: CGFloat = 100
+    static let imageCornerRadiusInCustomCell: CGFloat = 40
 }
 
 enum RegisterCell {
@@ -53,12 +53,12 @@ extension Main: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-
+        
         switch indexPath.row {
         case 0:
-            return Layout.currentRadiusCell
+            return Layout.currentCellHeight
         default:
-            return Layout.customRadiusCell
+            return Layout.customCellHeight
         }
     }
 }
