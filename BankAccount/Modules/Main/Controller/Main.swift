@@ -42,10 +42,10 @@ extension Main: UITableViewDelegate, UITableViewDataSource {
         
         switch indexPath.row {
         case 0:
-            let cell = Bundle.main.loadNibNamed(RegisterCell.currentCell, owner: self, options: nil)?.first as! CurrentCell
+          guard let cell = tableView.dequeueReusableCell(withIdentifier: RegisterCell.currentCell) as? CurrentCell else { return UITableViewCell.init() }
             return cell
         default:
-             let cell = Bundle.main.loadNibNamed(RegisterCell.customCell, owner: self, options: nil)?.first as! CustomTableViewCell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: RegisterCell.customCell) as? CustomTableViewCell else { return UITableViewCell.init() }
             cell.moneyLabel.text = "-$126530.9\(indexPath.row)"
             cell.onlineLabel.text = "Online"
             return cell
@@ -54,12 +54,8 @@ extension Main: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        switch indexPath.row {
-        case 0:
-            return Layout.currentCellHeight
-        default:
-            return Layout.customCellHeight
-        }
+        let cell = tableView.cellForRow(at: indexPath)
+        return cell is CurrentCell ? Layout.currentCellHeight : Layout.customCellHeight
     }
 }
 
