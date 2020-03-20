@@ -1,5 +1,5 @@
 //
-//  Cancel.swift
+//  AccountVC.swift
 //  BankAccount
 //
 //  Created by Egor Syrtcov on 3/20/20.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-class Cancel: UIViewController {
+class AccountVC: UIViewController {
 
 }

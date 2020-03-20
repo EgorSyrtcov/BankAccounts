@@ -1,5 +1,5 @@
 //
-//  Email.swift
+//  EmailVC.swift
 //  BankAccount
 //
 //  Created by Egor Syrtcov on 3/20/20.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-class Email: UIViewController {
+class EmailVC: UIViewController {
     
 }

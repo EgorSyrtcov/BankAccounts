@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Email-->
+        <!--EmailVC-->
         <scene sceneID="zbi-vW-83C">
             <objects>
-                <viewController id="yLy-RR-GnQ" customClass="Email" customModule="BankAccount" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yLy-RR-GnQ" customClass="EmailVC" customModule="BankAccount" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cKG-BT-ILr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
