@@ -8,14 +8,15 @@
 
 import UIKit
 
-enum Layout: CGFloat {
-    case cornerRadiusTabBarView = 20
-    case heightForRowAt = 120
-    case mainViewCornerRadius = 40
+enum Layout {
+    static let currentRadiusCell: CGFloat = 120
+    static let customRadiusCell: CGFloat = 100
+    static let mainViewCornerRadius: CGFloat = 40
 }
 
 enum RegisterCell {
-    static let customCell = "customCell"
+    static let customCell = "CustomTableViewCell"
+    static let currentCell = "CurrentCell"
 }
 
 class Main: UIViewController {
@@ -23,8 +24,10 @@ class Main: UIViewController {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var tableView: UITableView! {
         didSet {
-            let nibName = UINib(nibName: "CustomTableViewCell", bundle: nil)
+            let nibName = UINib(nibName: RegisterCell.customCell, bundle: nil)
             tableView.register(nibName, forCellReuseIdentifier: RegisterCell.customCell)
+            let currentName = UINib(nibName: RegisterCell.currentCell, bundle: nil)
+            tableView.register(currentName, forCellReuseIdentifier: RegisterCell.currentCell)
         }
     }
 }
@@ -36,16 +39,27 @@ extension Main: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: RegisterCell.customCell, for: indexPath) as? CustomTableViewCell else { return UITableViewCell.init() }
-            cell.backgroundColor = #colorLiteral(red: 0.7100346684, green: 0.4704568386, blue: 0.5800293088, alpha: 1)
+        
+        switch indexPath.row {
+        case 0:
+            let cell = Bundle.main.loadNibNamed(RegisterCell.currentCell, owner: self, options: nil)?.first as! CurrentCell
+            return cell
+        default:
+             let cell = Bundle.main.loadNibNamed(RegisterCell.customCell, owner: self, options: nil)?.first as! CustomTableViewCell
             cell.moneyLabel.text = "-$126530.9\(indexPath.row)"
             cell.onlineLabel.text = "Online"
-
-        return cell
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return Layout.heightForRowAt.rawValue
+
+        switch indexPath.row {
+        case 0:
+            return Layout.currentRadiusCell
+        default:
+            return Layout.customRadiusCell
+        }
     }
 }
 
