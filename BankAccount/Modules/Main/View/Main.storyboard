@@ -79,55 +79,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Hf-O5-axk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-119" y="80"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="ovR-fk-pIY">
-            <objects>
-                <viewController id="2pZ-0x-URo" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="eHb-KM-ncB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.13088402430000001" green="1" blue="0.070983554530000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="d13-iy-dhG"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" image="account" id="2u2-Yz-n7N"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3Va-qp-u9c" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="562" y="80"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="c9y-gv-Bgm">
-            <objects>
-                <viewController id="yAJ-H3-10j" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ck9-p0-98X">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.92447286839999998" green="0.81347483399999998" blue="0.82664394379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="Cpf-LG-jvE"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" image="mail" id="r1I-8t-pma"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hav-dP-3oZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1241" y="80"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="9Nn-0S-vWG">
-            <objects>
-                <viewController id="9o9-ox-OYi" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="1Ft-ZF-9cJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="4VQ-wd-J4b"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" image="close" id="46Q-jP-SPR"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zkh-4Q-iYZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1900" y="80"/>
+            <point key="canvasLocation" x="1628" y="-985"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Jkv-2r-eU0">
@@ -141,20 +93,47 @@
                     </tabBar>
                     <connections>
                         <segue destination="vTa-nU-SGB" kind="relationship" relationship="viewControllers" id="o2l-Tn-5Uq"/>
-                        <segue destination="2pZ-0x-URo" kind="relationship" relationship="viewControllers" id="r4E-Ad-rZh"/>
-                        <segue destination="yAJ-H3-10j" kind="relationship" relationship="viewControllers" id="fQ3-1p-n4T"/>
-                        <segue destination="9o9-ox-OYi" kind="relationship" relationship="viewControllers" id="bho-pF-5ii"/>
+                        <segue destination="Dkd-BQ-c8p" kind="relationship" relationship="viewControllers" id="zJ7-vJ-YGd"/>
+                        <segue destination="u1o-0e-aVz" kind="relationship" relationship="viewControllers" id="Ne9-01-JTY"/>
+                        <segue destination="1OI-6V-WbL" kind="relationship" relationship="viewControllers" id="2zG-JN-Mi5"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ugI-As-zaJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="849" y="-656"/>
         </scene>
+        <!--Account-->
+        <scene sceneID="SYc-hp-eE0">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Account" id="Dkd-BQ-c8p" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Sws-qg-7XS"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nh7-uc-XUU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1393" y="-656"/>
+        </scene>
+        <!--Email-->
+        <scene sceneID="bm0-5R-ylo">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Email" id="u1o-0e-aVz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="ORy-Ka-uzq"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5St-hn-40V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1393" y="-502"/>
+        </scene>
+        <!--Cancel-->
+        <scene sceneID="Ard-qL-ocx">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Cancel" id="1OI-6V-WbL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="dYC-jL-Zzr"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ynW-30-dp6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1400" y="-366"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="account" width="24" height="24"/>
         <image name="clock" width="24" height="24"/>
-        <image name="close" width="24" height="24"/>
-        <image name="mail" width="24" height="24"/>
     </resources>
 </document>

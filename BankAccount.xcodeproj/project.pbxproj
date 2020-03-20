@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E6F121F242499D600786E2C /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6F121E242499D600786E2C /* Account.swift */; };
+		2E6F1221242499EF00786E2C /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E6F1220242499EF00786E2C /* Account.storyboard */; };
+		2E6F122624249C4700786E2C /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6F122524249C4700786E2C /* Email.swift */; };
+		2E6F122824249C7100786E2C /* Email.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E6F122724249C7100786E2C /* Email.storyboard */; };
+		2E6F122D24249D7C00786E2C /* Cancel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6F122C24249D7C00786E2C /* Cancel.swift */; };
+		2E6F122F24249DDB00786E2C /* Cancel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E6F122E24249DDB00786E2C /* Cancel.storyboard */; };
 		2EBC83EC241FC34F00698837 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EBC83EB241FC34F00698837 /* Main.storyboard */; };
 		2EEAFC6F24239F24008DFE46 /* CurrentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EEAFC6E24239F24008DFE46 /* CurrentView.xib */; };
 		2EEAFC7124239F64008DFE46 /* CurrentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEAFC7024239F64008DFE46 /* CurrentView.swift */; };
@@ -22,6 +28,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E6F121E242499D600786E2C /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		2E6F1220242499EF00786E2C /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
+		2E6F122524249C4700786E2C /* Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
+		2E6F122724249C7100786E2C /* Email.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Email.storyboard; sourceTree = "<group>"; };
+		2E6F122C24249D7C00786E2C /* Cancel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancel.swift; sourceTree = "<group>"; };
+		2E6F122E24249DDB00786E2C /* Cancel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cancel.storyboard; sourceTree = "<group>"; };
 		2EBC83EB241FC34F00698837 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2EEAFC6E24239F24008DFE46 /* CurrentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentView.xib; sourceTree = "<group>"; };
 		2EEAFC7024239F64008DFE46 /* CurrentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentView.swift; sourceTree = "<group>"; };
@@ -49,6 +61,81 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E6F121B2424997700786E2C /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				2E6F121D2424999A00786E2C /* View */,
+				2E6F121C2424998D00786E2C /* Controller */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		2E6F121C2424998D00786E2C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2E6F121E242499D600786E2C /* Account.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2E6F121D2424999A00786E2C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2E6F1220242499EF00786E2C /* Account.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2E6F122224249C0C00786E2C /* Email */ = {
+			isa = PBXGroup;
+			children = (
+				2E6F122424249C2900786E2C /* View */,
+				2E6F122324249C1B00786E2C /* Controller */,
+			);
+			path = Email;
+			sourceTree = "<group>";
+		};
+		2E6F122324249C1B00786E2C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2E6F122524249C4700786E2C /* Email.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2E6F122424249C2900786E2C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2E6F122724249C7100786E2C /* Email.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2E6F122924249D2500786E2C /* Cancel */ = {
+			isa = PBXGroup;
+			children = (
+				2E6F122B24249D5A00786E2C /* View */,
+				2E6F122A24249D4D00786E2C /* Controller */,
+			);
+			path = Cancel;
+			sourceTree = "<group>";
+		};
+		2E6F122A24249D4D00786E2C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2E6F122C24249D7C00786E2C /* Cancel.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2E6F122B24249D5A00786E2C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2E6F122E24249DDB00786E2C /* Cancel.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		2EEAFC732423AE28008DFE46 /* CurrentViewScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -62,8 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				2EEB0001241FB28500B0C74B /* Model */,
-				2EEB0002241FB28D00B0C74B /* Controller */,
 				2EEB0003241FB29800B0C74B /* View */,
+				2EEB0002241FB28D00B0C74B /* Controller */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -191,6 +278,9 @@
 			isa = PBXGroup;
 			children = (
 				2EEB0000241FB25D00B0C74B /* Main */,
+				2E6F121B2424997700786E2C /* Account */,
+				2E6F122224249C0C00786E2C /* Email */,
+				2E6F122924249D2500786E2C /* Cancel */,
 				2EEB0004241FB2C300B0C74B /* Splash */,
 			);
 			path = Modules;
@@ -267,6 +357,9 @@
 				2EEAFC6F24239F24008DFE46 /* CurrentView.xib in Resources */,
 				2EEBFFF5241FB15300B0C74B /* LaunchScreen.storyboard in Resources */,
 				2EF2C4362421F2F0004BEC91 /* CustomTableViewCell.xib in Resources */,
+				2E6F1221242499EF00786E2C /* Account.storyboard in Resources */,
+				2E6F122824249C7100786E2C /* Email.storyboard in Resources */,
+				2E6F122F24249DDB00786E2C /* Cancel.storyboard in Resources */,
 				2EEBFFF2241FB15300B0C74B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +376,9 @@
 				2EF2C4352421F2F0004BEC91 /* CustomTableViewCell.swift in Sources */,
 				2EEB000B241FB35A00B0C74B /* UIViewControllerStoryboard.swift in Sources */,
 				2EEB000D241FB37100B0C74B /* Color.swift in Sources */,
+				2E6F122624249C4700786E2C /* Email.swift in Sources */,
+				2E6F121F242499D600786E2C /* Account.swift in Sources */,
+				2E6F122D24249D7C00786E2C /* Cancel.swift in Sources */,
 				2EEB0007241FB30700B0C74B /* StoryboardInitializable.swift in Sources */,
 				2EEAFC7124239F64008DFE46 /* CurrentView.swift in Sources */,
 			);
