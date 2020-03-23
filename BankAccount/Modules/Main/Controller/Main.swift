@@ -44,8 +44,7 @@ class Main: UIViewController {
     
     private func fetchData() {
         
-        let URL = "https://api.myjson.com/bins/uy08c"
-        Alamofire.request(URL).responseObject { (response: DataResponse<User>) in
+        Alamofire.request(urlString).responseObject { (response: DataResponse<User>) in
             let courses = response.result.value
             self.users.append(courses)
             
@@ -57,7 +56,6 @@ class Main: UIViewController {
         }
     }
 }
-
 
 extension Main: UITableViewDelegate, UITableViewDataSource {
     

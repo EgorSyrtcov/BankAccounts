@@ -16,7 +16,6 @@
 		2E6F12322424C39500786E2C /* CurrentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6F12302424C39500786E2C /* CurrentCell.swift */; };
 		2E6F12332424C39500786E2C /* CurrentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E6F12312424C39500786E2C /* CurrentCell.xib */; };
 		2EBC6D3D24277A8B004F2A2D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBC6D3C24277A8B004F2A2D /* User.swift */; };
-		2EBC6D3F24277ADE004F2A2D /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBC6D3E24277ADE004F2A2D /* Cells.swift */; };
 		2EBC83EC241FC34F00698837 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EBC83EB241FC34F00698837 /* Main.storyboard */; };
 		2EE43BBD2427581E0088707A /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE43BBC2427581E0088707A /* AlamofireObjectMapper.framework */; };
 		2EE43BBF2427583E0088707A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE43BBE2427583E0088707A /* Alamofire.framework */; };
@@ -28,6 +27,7 @@
 		2EEBFFED241FB15000B0C74B /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEBFFEC241FB15000B0C74B /* Main.swift */; };
 		2EEBFFF2241FB15300B0C74B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EEBFFF1241FB15300B0C74B /* Assets.xcassets */; };
 		2EEBFFF5241FB15300B0C74B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EEBFFF3241FB15300B0C74B /* LaunchScreen.storyboard */; };
+		2EEF6AFC2428B32800D530FC /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF6AFB2428B32800D530FC /* Cells.swift */; };
 		2EF2C4352421F2F0004BEC91 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF2C4332421F2F0004BEC91 /* CustomTableViewCell.swift */; };
 		2EF2C4362421F2F0004BEC91 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EF2C4342421F2F0004BEC91 /* CustomTableViewCell.xib */; };
 		6BC537732321FE0128C5FDE9 /* Pods_BankAccount.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6EF49CA19D0175EB10FC9B8 /* Pods_BankAccount.framework */; };
@@ -44,7 +44,6 @@
 		2E6F12302424C39500786E2C /* CurrentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCell.swift; sourceTree = "<group>"; };
 		2E6F12312424C39500786E2C /* CurrentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentCell.xib; sourceTree = "<group>"; };
 		2EBC6D3C24277A8B004F2A2D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		2EBC6D3E24277ADE004F2A2D /* Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
 		2EBC83EB241FC34F00698837 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2EE43BBC2427581E0088707A /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AlamofireObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EE43BBE2427583E0088707A /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +57,7 @@
 		2EEBFFF1241FB15300B0C74B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2EEBFFF4241FB15300B0C74B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2EEBFFF6241FB15300B0C74B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EEF6AFB2428B32800D530FC /* Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
 		2EF2C4332421F2F0004BEC91 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		2EF2C4342421F2F0004BEC91 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		B815978FD8EFF366CE8F914E /* Pods-BankAccount.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BankAccount.debug.xcconfig"; path = "Target Support Files/Pods-BankAccount/Pods-BankAccount.debug.xcconfig"; sourceTree = "<group>"; };
@@ -165,7 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				2EBC6D3C24277A8B004F2A2D /* User.swift */,
-				2EBC6D3E24277ADE004F2A2D /* Cells.swift */,
+				2EEF6AFB2428B32800D530FC /* Cells.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -476,7 +476,7 @@
 				2EEB0007241FB30700B0C74B /* StoryboardInitializable.swift in Sources */,
 				2E6F12322424C39500786E2C /* CurrentCell.swift in Sources */,
 				2EBC6D3D24277A8B004F2A2D /* User.swift in Sources */,
-				2EBC6D3F24277ADE004F2A2D /* Cells.swift in Sources */,
+				2EEF6AFC2428B32800D530FC /* Cells.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
