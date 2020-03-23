@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,7 +15,12 @@
 		2E6F122F24249DDB00786E2C /* CancelVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E6F122E24249DDB00786E2C /* CancelVC.storyboard */; };
 		2E6F12322424C39500786E2C /* CurrentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6F12302424C39500786E2C /* CurrentCell.swift */; };
 		2E6F12332424C39500786E2C /* CurrentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E6F12312424C39500786E2C /* CurrentCell.xib */; };
+		2EBC6D3D24277A8B004F2A2D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBC6D3C24277A8B004F2A2D /* User.swift */; };
+		2EBC6D3F24277ADE004F2A2D /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBC6D3E24277ADE004F2A2D /* Cells.swift */; };
 		2EBC83EC241FC34F00698837 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EBC83EB241FC34F00698837 /* Main.storyboard */; };
+		2EE43BBD2427581E0088707A /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE43BBC2427581E0088707A /* AlamofireObjectMapper.framework */; };
+		2EE43BBF2427583E0088707A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE43BBE2427583E0088707A /* Alamofire.framework */; };
+		2EE43BC1242758420088707A /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE43BC0242758420088707A /* ObjectMapper.framework */; };
 		2EEB0007241FB30700B0C74B /* StoryboardInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEB0006241FB30700B0C74B /* StoryboardInitializable.swift */; };
 		2EEB000B241FB35A00B0C74B /* UIViewControllerStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEB000A241FB35A00B0C74B /* UIViewControllerStoryboard.swift */; };
 		2EEB000D241FB37100B0C74B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEB000C241FB37100B0C74B /* Color.swift */; };
@@ -25,9 +30,11 @@
 		2EEBFFF5241FB15300B0C74B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EEBFFF3241FB15300B0C74B /* LaunchScreen.storyboard */; };
 		2EF2C4352421F2F0004BEC91 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF2C4332421F2F0004BEC91 /* CustomTableViewCell.swift */; };
 		2EF2C4362421F2F0004BEC91 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EF2C4342421F2F0004BEC91 /* CustomTableViewCell.xib */; };
+		6BC537732321FE0128C5FDE9 /* Pods_BankAccount.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6EF49CA19D0175EB10FC9B8 /* Pods_BankAccount.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A16D0FE99785F84BF1DD9A8 /* Pods-BankAccount.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BankAccount.release.xcconfig"; path = "Target Support Files/Pods-BankAccount/Pods-BankAccount.release.xcconfig"; sourceTree = "<group>"; };
 		2E6F121E242499D600786E2C /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
 		2E6F1220242499EF00786E2C /* AccountVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountVC.storyboard; sourceTree = "<group>"; };
 		2E6F122524249C4700786E2C /* EmailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVC.swift; sourceTree = "<group>"; };
@@ -36,7 +43,12 @@
 		2E6F122E24249DDB00786E2C /* CancelVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CancelVC.storyboard; sourceTree = "<group>"; };
 		2E6F12302424C39500786E2C /* CurrentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCell.swift; sourceTree = "<group>"; };
 		2E6F12312424C39500786E2C /* CurrentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentCell.xib; sourceTree = "<group>"; };
+		2EBC6D3C24277A8B004F2A2D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2EBC6D3E24277ADE004F2A2D /* Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
 		2EBC83EB241FC34F00698837 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		2EE43BBC2427581E0088707A /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AlamofireObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EE43BBE2427583E0088707A /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EE43BC0242758420088707A /* ObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EEB0006241FB30700B0C74B /* StoryboardInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInitializable.swift; sourceTree = "<group>"; };
 		2EEB000A241FB35A00B0C74B /* UIViewControllerStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerStoryboard.swift; sourceTree = "<group>"; };
 		2EEB000C241FB37100B0C74B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -48,6 +60,8 @@
 		2EEBFFF6241FB15300B0C74B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2EF2C4332421F2F0004BEC91 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		2EF2C4342421F2F0004BEC91 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		B815978FD8EFF366CE8F914E /* Pods-BankAccount.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BankAccount.debug.xcconfig"; path = "Target Support Files/Pods-BankAccount/Pods-BankAccount.debug.xcconfig"; sourceTree = "<group>"; };
+		E6EF49CA19D0175EB10FC9B8 /* Pods_BankAccount.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BankAccount.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +69,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EE43BC1242758420088707A /* ObjectMapper.framework in Frameworks */,
+				2EE43BBF2427583E0088707A /* Alamofire.framework in Frameworks */,
+				2EE43BBD2427581E0088707A /* AlamofireObjectMapper.framework in Frameworks */,
+				6BC537732321FE0128C5FDE9 /* Pods_BankAccount.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +154,22 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		2EBC6D3324275E25004F2A2D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		2EE43BB7242755B80088707A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2EBC6D3C24277A8B004F2A2D /* User.swift */,
+				2EBC6D3E24277ADE004F2A2D /* Cells.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		2EEAFC732423AE28008DFE46 /* CurrentCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +182,8 @@
 		2EEB0000241FB25D00B0C74B /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				2EBC6D3324275E25004F2A2D /* Service */,
+				2EE43BB7242755B80088707A /* Model */,
 				2EEB0003241FB29800B0C74B /* View */,
 				2EEB0002241FB28D00B0C74B /* Controller */,
 			);
@@ -219,6 +255,8 @@
 				2EEBFFE9241FB15000B0C74B /* BankAccount */,
 				2EEBFFFC241FB1DA00B0C74B /* Resourses */,
 				2EEBFFE8241FB15000B0C74B /* Products */,
+				FB62660645C2CD07A950086F /* Pods */,
+				6CC33CC4242EE087C5A8A2E7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -287,6 +325,26 @@
 			path = CustomTableCell;
 			sourceTree = "<group>";
 		};
+		6CC33CC4242EE087C5A8A2E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2EE43BC0242758420088707A /* ObjectMapper.framework */,
+				2EE43BBE2427583E0088707A /* Alamofire.framework */,
+				2EE43BBC2427581E0088707A /* AlamofireObjectMapper.framework */,
+				E6EF49CA19D0175EB10FC9B8 /* Pods_BankAccount.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FB62660645C2CD07A950086F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B815978FD8EFF366CE8F914E /* Pods-BankAccount.debug.xcconfig */,
+				1A16D0FE99785F84BF1DD9A8 /* Pods-BankAccount.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -294,9 +352,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2EEBFFF9241FB15300B0C74B /* Build configuration list for PBXNativeTarget "BankAccount" */;
 			buildPhases = (
+				5EA5778EC9BFD753D7ED48AB /* [CP] Check Pods Manifest.lock */,
 				2EEBFFE3241FB15000B0C74B /* Sources */,
 				2EEBFFE4241FB15000B0C74B /* Frameworks */,
 				2EEBFFE5241FB15000B0C74B /* Resources */,
+				455AB73C578F1868BDDC6836 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -358,6 +418,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		455AB73C578F1868BDDC6836 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BankAccount/Pods-BankAccount-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BankAccount/Pods-BankAccount-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BankAccount/Pods-BankAccount-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5EA5778EC9BFD753D7ED48AB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BankAccount-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2EEBFFE3241FB15000B0C74B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -373,6 +475,8 @@
 				2E6F122D24249D7C00786E2C /* CancelVC.swift in Sources */,
 				2EEB0007241FB30700B0C74B /* StoryboardInitializable.swift in Sources */,
 				2E6F12322424C39500786E2C /* CurrentCell.swift in Sources */,
+				2EBC6D3D24277A8B004F2A2D /* User.swift in Sources */,
+				2EBC6D3F24277ADE004F2A2D /* Cells.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,6 +612,7 @@
 		};
 		2EEBFFFA241FB15300B0C74B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B815978FD8EFF366CE8F914E /* Pods-BankAccount.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -526,6 +631,7 @@
 		};
 		2EEBFFFB241FB15300B0C74B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A16D0FE99785F84BF1DD9A8 /* Pods-BankAccount.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

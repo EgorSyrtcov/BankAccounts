@@ -63,6 +63,8 @@
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <connections>
+                <outlet property="currentLabel" destination="IHC-Bl-OpV" id="GGj-xn-AIG"/>
+                <outlet property="moneyLabel" destination="33C-5v-FUJ" id="rBg-Nm-b9M"/>
                 <outlet property="view" destination="U3q-Mx-SDU" id="VQ3-mF-lRe"/>
             </connections>
             <point key="canvasLocation" x="217.39130434782609" y="151.00446428571428"/>
