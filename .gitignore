@@ -88,3 +88,30 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+BankAccount.xcworkspace/contents.xcworkspacedata
+BankAccount.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+BankAccount/Modules/Main/Model/Cells.swift
+Pods/Manifest.lock
+Pods/Alamofire/LICENSE
+Pods/Alamofire/README.md
+Pods/Alamofire/Source/AFError.swift
+Pods/Alamofire/Source/Alamofire.swift
+Pods/Alamofire/Source/DispatchQueue+Alamofire.swift
+Pods/Alamofire/Source/MultipartFormData.swift
+Pods/Alamofire/Source/NetworkReachabilityManager.swift
+Pods/Alamofire/Source/Notifications.swift
+Pods/Alamofire/Source/ParameterEncoding.swift
+Pods/Alamofire/Source/Request.swift
+Pods/Alamofire/Source/Response.swift
+Pods/Alamofire/Source/ResponseSerialization.swift
+Pods/Alamofire/Source/Result.swift
+Pods/Alamofire/Source/ServerTrustPolicy.swift
+Pods/Alamofire/Source/SessionDelegate.swift
+Pods/Alamofire/Source/TaskDelegate.swift
+Pods/Alamofire/Source/Timeline.swift
+Pods/Alamofire/Source/Validation.swift
+Pods/AlamofireObjectMapper/LICENSE
+Pods/AlamofireObjectMapper/README.md
+Pods/AlamofireObjectMapper/AlamofireObjectMapper/AlamofireObjectMapper.swift
+Pods/ObjectMapper/LICENSE
+Pods/ObjectMapper/README-CN.md
