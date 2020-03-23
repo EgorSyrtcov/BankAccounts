@@ -90,7 +90,6 @@ fastlane/test_output
 iOSInjectionProject/
 BankAccount.xcworkspace/contents.xcworkspacedata
 BankAccount.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
-BankAccount/Modules/Main/Model/Cells.swift
 Pods/Manifest.lock
 Pods/Alamofire/LICENSE
 Pods/Alamofire/README.md
