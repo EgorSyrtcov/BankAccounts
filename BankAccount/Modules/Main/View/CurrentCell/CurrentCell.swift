@@ -19,9 +19,7 @@ class CurrentCell: UITableViewCell {
         }
     }
     
-    func configuration(cell: Cell, indexPath: IndexPath) {
-        
-        guard let cell = cell.cells?[indexPath.row] else { return }
+    func configuration(cell: CellItem, indexPath: IndexPath) {
         
         let currencyFormatter = NumberFormatter()
         currencyFormatter.usesGroupingSeparator = true

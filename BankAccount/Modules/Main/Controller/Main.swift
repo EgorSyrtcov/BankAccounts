@@ -23,7 +23,7 @@ enum RegisterCell {
 
 class Main: UIViewController {
     
-    var cells = [Cell?]()
+    var cells = [CellItem]()
     private let urlString = "https://api.myjson.com/bins/uy08c"
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -46,7 +46,7 @@ class Main: UIViewController {
         
         Alamofire.request(urlString).responseObject { (response: DataResponse<Cell>) in
             let cellsResponse = response.result.value
-            self.cells.append(cellsResponse)
+            self.cells = cellsResponse?.items ?? []
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -60,27 +60,48 @@ class Main: UIViewController {
 extension Main: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
         return cells.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        switch indexPath.row {
-        case 0:
+        
+        let cellItem = cells[indexPath.row]
+        
+        switch cellItem.type {
+
+        case "bigCell":
             guard let cell = tableView.dequeueReusableCell(withIdentifier: RegisterCell.currentCell) as? CurrentCell else { return UITableViewCell.init() }
-            
-            guard let cellRow = cells[indexPath.row] else { return UITableViewCell() }
-            cell.configuration(cell: cellRow, indexPath: indexPath)
+
+            cell.configuration(cell: cellItem, indexPath: indexPath)
+
+            return cell
+        case "smallCell":
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: RegisterCell.customCell) as? CustomTableViewCell else { return UITableViewCell.init() }
+
+            cell.configuration(cell: cellItem, indexPath: indexPath)
             
             return cell
         default:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: RegisterCell.customCell) as? CustomTableViewCell else { return UITableViewCell.init() }
-            
-            cell.moneyLabel.text = "-$126530.9\(indexPath.row)"
-            cell.onlineLabel.text = "Online"
-            return cell
+            return UITableViewCell()
         }
     }
+//        switch indexPath.row {
+//        case 0:
+//            guard let cell = tableView.dequeueReusableCell(withIdentifier: RegisterCell.currentCell) as? CurrentCell else { return UITableViewCell.init() }
+//
+//            cell.configuration(cell: cellRow, indexPath: indexPath)
+//
+//            return cell
+//        default:
+//            guard let cell = tableView.dequeueReusableCell(withIdentifier: RegisterCell.customCell) as? CustomTableViewCell else { return UITableViewCell.init() }
+//
+//            cell.moneyLabel.text = "-$126530.9\(indexPath.row)"
+//            cell.onlineLabel.text = "Online"
+//            return cell
+//        }
+//    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         

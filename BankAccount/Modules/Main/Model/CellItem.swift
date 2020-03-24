@@ -1,5 +1,5 @@
 //
-//  Cells1.swift
+//  CellItem.swift
 //  BankAccount
 //
 //  Created by Egor Syrtcov on 3/23/20.
@@ -8,7 +8,7 @@
 
 import ObjectMapper
 
-struct Cells: Codable  {
+struct CellItem: Codable  {
     let type: String?
     let balance: Int?
     let date: Int?
@@ -17,7 +17,7 @@ struct Cells: Codable  {
     let title: String?
 }
 
-extension Cells: ImmutableMappable {
+extension CellItem: ImmutableMappable {
     
     init(map: Map) throws {
         type = try map.value("type")

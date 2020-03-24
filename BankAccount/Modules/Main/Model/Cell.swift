@@ -9,16 +9,16 @@
 import ObjectMapper
 
 struct Cell: Codable  {
-    let cells: [Cells]?
+    let items: [CellItem]?
 }
 
 extension Cell: ImmutableMappable {
     
     init(map: Map) throws {
-        cells = try map.value("cells")
+        items = try map.value("cells")
     }
     
     func mapping(map: Map) {
-        cells >>> map["cells"]
+        items >>> map["cells"]
     }
 }
