@@ -10,10 +10,25 @@ import UIKit
 
 
 class CurrentCell: UITableViewCell {
-
+    
+    @IBOutlet weak var currentLabel: UILabel!
+    @IBOutlet weak var moneyLabel: UILabel!
     @IBOutlet weak var view: UIView! {
         didSet {
             view.layer.cornerRadius = 20
         }
+    }
+    
+    func configuration(cell: CellItem, indexPath: IndexPath) {
+        
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.usesGroupingSeparator = true
+        currencyFormatter.numberStyle = .currency
+        currencyFormatter.locale = Locale.current
+        
+        let priceString = currencyFormatter.string(from: cell.balance as NSNumber? ?? 0)!
+        
+        currentLabel.text = "Current Balance \(String(describing: cell.date ?? 0))"
+        moneyLabel.text = priceString
     }
 }
