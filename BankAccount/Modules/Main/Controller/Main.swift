@@ -9,7 +9,7 @@
 import UIKit
 
 enum Layout {
-    static let currentCellHeight: CGFloat = 120
+    static let currentCellHeight: CGFloat = 300
     static let customCellHeight: CGFloat = 100
     static let imageCornerRadiusInCustomCell: CGFloat = 40
 }
@@ -35,7 +35,7 @@ class Main: UIViewController {
 extension Main: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5 // DoTo Array
+        return 5 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
