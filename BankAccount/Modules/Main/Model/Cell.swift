@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  Cell.swift
 
 //
 //  Created by Egor Syrtcov on 3/22/20.
@@ -8,11 +8,11 @@
 
 import ObjectMapper
 
-struct User: Codable  {
+struct Cell: Codable  {
     let cells: [Cells]?
 }
 
-extension User: ImmutableMappable {
+extension Cell: ImmutableMappable {
     
     init(map: Map) throws {
         cells = try map.value("cells")

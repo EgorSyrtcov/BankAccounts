@@ -23,7 +23,7 @@ enum RegisterCell {
 
 class Main: UIViewController {
     
-    var users = [User?]()
+    var cells = [Cell?]()
     private let urlString = "https://api.myjson.com/bins/uy08c"
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -44,9 +44,9 @@ class Main: UIViewController {
     
     private func fetchData() {
         
-        Alamofire.request(urlString).responseObject { (response: DataResponse<User>) in
-            let courses = response.result.value
-            self.users.append(courses)
+        Alamofire.request(urlString).responseObject { (response: DataResponse<Cell>) in
+            let cellsResponse = response.result.value
+            self.cells.append(cellsResponse)
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -60,7 +60,7 @@ class Main: UIViewController {
 extension Main: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count // DoTo Array
+        return cells.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -69,8 +69,8 @@ extension Main: UITableViewDelegate, UITableViewDataSource {
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: RegisterCell.currentCell) as? CurrentCell else { return UITableViewCell.init() }
             
-            let user = users[indexPath.row]
-            cell.configuration(user: (user ?? nil)!, indexPath: indexPath)
+            guard let cellRow = cells[indexPath.row] else { return UITableViewCell() }
+            cell.configuration(cell: cellRow, indexPath: indexPath)
             
             return cell
         default:

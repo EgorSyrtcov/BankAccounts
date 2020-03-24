@@ -15,7 +15,7 @@
 		2E6F122F24249DDB00786E2C /* CancelVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E6F122E24249DDB00786E2C /* CancelVC.storyboard */; };
 		2E6F12322424C39500786E2C /* CurrentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6F12302424C39500786E2C /* CurrentCell.swift */; };
 		2E6F12332424C39500786E2C /* CurrentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E6F12312424C39500786E2C /* CurrentCell.xib */; };
-		2EBC6D3D24277A8B004F2A2D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBC6D3C24277A8B004F2A2D /* User.swift */; };
+		2EBC6D3D24277A8B004F2A2D /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBC6D3C24277A8B004F2A2D /* Cell.swift */; };
 		2EBC83EC241FC34F00698837 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EBC83EB241FC34F00698837 /* Main.storyboard */; };
 		2EE43BBD2427581E0088707A /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE43BBC2427581E0088707A /* AlamofireObjectMapper.framework */; };
 		2EE43BBF2427583E0088707A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE43BBE2427583E0088707A /* Alamofire.framework */; };
@@ -43,7 +43,7 @@
 		2E6F122E24249DDB00786E2C /* CancelVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CancelVC.storyboard; sourceTree = "<group>"; };
 		2E6F12302424C39500786E2C /* CurrentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCell.swift; sourceTree = "<group>"; };
 		2E6F12312424C39500786E2C /* CurrentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentCell.xib; sourceTree = "<group>"; };
-		2EBC6D3C24277A8B004F2A2D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2EBC6D3C24277A8B004F2A2D /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		2EBC83EB241FC34F00698837 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2EE43BBC2427581E0088707A /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AlamofireObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EE43BBE2427583E0088707A /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,7 +164,7 @@
 		2EE43BB7242755B80088707A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2EBC6D3C24277A8B004F2A2D /* User.swift */,
+				2EBC6D3C24277A8B004F2A2D /* Cell.swift */,
 				2EEF6AFB2428B32800D530FC /* Cells.swift */,
 			);
 			path = Model;
@@ -475,7 +475,7 @@
 				2E6F122D24249D7C00786E2C /* CancelVC.swift in Sources */,
 				2EEB0007241FB30700B0C74B /* StoryboardInitializable.swift in Sources */,
 				2E6F12322424C39500786E2C /* CurrentCell.swift in Sources */,
-				2EBC6D3D24277A8B004F2A2D /* User.swift in Sources */,
+				2EBC6D3D24277A8B004F2A2D /* Cell.swift in Sources */,
 				2EEF6AFC2428B32800D530FC /* Cells.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

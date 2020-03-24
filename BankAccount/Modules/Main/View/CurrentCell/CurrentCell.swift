@@ -19,18 +19,18 @@ class CurrentCell: UITableViewCell {
         }
     }
     
-    func configuration(user: User, indexPath: IndexPath) {
+    func configuration(cell: Cell, indexPath: IndexPath) {
         
-        guard let user = user.cells?[indexPath.row] else { return }
+        guard let cell = cell.cells?[indexPath.row] else { return }
         
         let currencyFormatter = NumberFormatter()
         currencyFormatter.usesGroupingSeparator = true
         currencyFormatter.numberStyle = .currency
         currencyFormatter.locale = Locale.current
         
-        let priceString = currencyFormatter.string(from: user.balance as NSNumber? ?? 0)!
+        let priceString = currencyFormatter.string(from: cell.balance as NSNumber? ?? 0)!
         
-        currentLabel.text = "Current Balance \(String(describing: user.date ?? 0))"
+        currentLabel.text = "Current Balance \(String(describing: cell.date ?? 0))"
         moneyLabel.text = priceString
     }
 }
