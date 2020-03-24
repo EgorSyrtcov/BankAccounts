@@ -66,42 +66,25 @@ extension Main: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
         let cellItem = cells[indexPath.row]
         
         switch cellItem.type {
-
         case "bigCell":
             guard let cell = tableView.dequeueReusableCell(withIdentifier: RegisterCell.currentCell) as? CurrentCell else { return UITableViewCell.init() }
 
             cell.configuration(cell: cellItem, indexPath: indexPath)
-
             return cell
+            
         case "smallCell":
             guard let cell = tableView.dequeueReusableCell(withIdentifier: RegisterCell.customCell) as? CustomTableViewCell else { return UITableViewCell.init() }
 
             cell.configuration(cell: cellItem, indexPath: indexPath)
-            
             return cell
+            
         default:
             return UITableViewCell()
         }
     }
-//        switch indexPath.row {
-//        case 0:
-//            guard let cell = tableView.dequeueReusableCell(withIdentifier: RegisterCell.currentCell) as? CurrentCell else { return UITableViewCell.init() }
-//
-//            cell.configuration(cell: cellRow, indexPath: indexPath)
-//
-//            return cell
-//        default:
-//            guard let cell = tableView.dequeueReusableCell(withIdentifier: RegisterCell.customCell) as? CustomTableViewCell else { return UITableViewCell.init() }
-//
-//            cell.moneyLabel.text = "-$126530.9\(indexPath.row)"
-//            cell.onlineLabel.text = "Online"
-//            return cell
-//        }
-//    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
