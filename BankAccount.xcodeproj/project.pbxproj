@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2E41F390242B642900B05766 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E41F38E242B642900B05766 /* CollectionViewCell.swift */; };
 		2E41F391242B642900B05766 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E41F38F242B642900B05766 /* CollectionViewCell.xib */; };
+		2E41F39A242B918E00B05766 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E41F399242B918E00B05766 /* Service.swift */; };
 		2E6F121F242499D600786E2C /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6F121E242499D600786E2C /* AccountVC.swift */; };
 		2E6F1221242499EF00786E2C /* AccountVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E6F1220242499EF00786E2C /* AccountVC.storyboard */; };
 		2E6F122624249C4700786E2C /* EmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6F122524249C4700786E2C /* EmailVC.swift */; };
@@ -36,6 +37,7 @@
 		1A16D0FE99785F84BF1DD9A8 /* Pods-BankAccount.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BankAccount.release.xcconfig"; path = "Target Support Files/Pods-BankAccount/Pods-BankAccount.release.xcconfig"; sourceTree = "<group>"; };
 		2E41F38E242B642900B05766 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		2E41F38F242B642900B05766 /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		2E41F399242B918E00B05766 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		2E6F121E242499D600786E2C /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
 		2E6F1220242499EF00786E2C /* AccountVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountVC.storyboard; sourceTree = "<group>"; };
 		2E6F122524249C4700786E2C /* EmailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVC.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 		2EBC6D3324275E25004F2A2D /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				2E41F399242B918E00B05766 /* Service.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EEBFFED241FB15000B0C74B /* Main.swift in Sources */,
+				2E41F39A242B918E00B05766 /* Service.swift in Sources */,
 				2EEBFFEB241FB15000B0C74B /* AppDelegate.swift in Sources */,
 				2EF2C4352421F2F0004BEC91 /* CustomTableViewCell.swift in Sources */,
 				2EEB000B241FB35A00B0C74B /* UIViewControllerStoryboard.swift in Sources */,

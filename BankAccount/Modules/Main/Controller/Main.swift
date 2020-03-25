@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Alamofire
-import AlamofireObjectMapper
 
 enum Layout {
     static let currentCellHeight: CGFloat = 150
@@ -25,7 +23,7 @@ enum RegisterCell {
 class Main: UIViewController {
     
     var cells = [CellItem]()
-    private let urlString = "https://api.myjson.com/bins/uy08c"
+
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView! {
@@ -40,19 +38,13 @@ class Main: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fetchData()
-    }
-    
-    private func fetchData() {
-        
-        Alamofire.request(urlString).responseObject { (response: DataResponse<Cell>) in
-            let cellsResponse = response.result.value
-            self.cells = cellsResponse?.items ?? []
+        Service.shared.fetchData { [weak self](cellItem) in
+            self?.cells = cellItem ?? []
             
             DispatchQueue.main.async {
-                self.tableView.reloadData()
-                self.activityIndicator.stopAnimating()
-                self.activityIndicator.isHidden = true
+                self?.tableView.reloadData()
+                self?.activityIndicator.stopAnimating()
+                self?.activityIndicator.isHidden = true
             }
         }
     }
