@@ -11,24 +11,42 @@ import UIKit
 
 class CurrentCell: UITableViewCell {
     
-    @IBOutlet weak var currentLabel: UILabel!
-    @IBOutlet weak var moneyLabel: UILabel!
-    @IBOutlet weak var view: UIView! {
-        didSet {
-            view.layer.cornerRadius = 20
-        }
+    var cells = [CellItem]()
+    @IBOutlet weak var collectionView: UICollectionView!
+}
+
+extension CurrentCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        setupCollectionView()
     }
     
-    func configuration(cell: CellItem, indexPath: IndexPath) {
+    private func setupCollectionView() {
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(UINib.init(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "collectionViewID")
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return cells.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let currencyFormatter = NumberFormatter()
-        currencyFormatter.usesGroupingSeparator = true
-        currencyFormatter.numberStyle = .currency
-        currencyFormatter.locale = Locale.current
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewID", for: indexPath as IndexPath) as! CollectionViewCell
+        cell.layer.cornerRadius = Layout.collectionCornerRadius
         
-        let priceString = currencyFormatter.string(from: cell.balance as NSNumber? ?? 0)!
+        let cellItem = cells[indexPath.row]
         
-        currentLabel.text = "Current Balance \(String(describing: cell.date ?? 0))"
-        moneyLabel.text = priceString
+        cell.configuration(cell: cellItem, indexPath: indexPath)
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:
+        UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: 250, height: 100)
     }
 }

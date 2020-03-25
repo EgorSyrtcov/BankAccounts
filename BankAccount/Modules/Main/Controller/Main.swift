@@ -11,8 +11,9 @@ import Alamofire
 import AlamofireObjectMapper
 
 enum Layout {
-    static let currentCellHeight: CGFloat = 300
-    static let customCellHeight: CGFloat = 100
+    static let currentCellHeight: CGFloat = 150
+    static let customCellHeight: CGFloat = 120
+    static let collectionCornerRadius: CGFloat = 40
     static let imageCornerRadiusInCustomCell: CGFloat = 40
 }
 
@@ -60,7 +61,7 @@ class Main: UIViewController {
 extension Main: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5 
+        return cells.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -70,10 +71,9 @@ extension Main: UITableViewDelegate, UITableViewDataSource {
         switch cellItem.type {
         case "bigCell":
             guard let cell = tableView.dequeueReusableCell(withIdentifier: RegisterCell.currentCell) as? CurrentCell else { return UITableViewCell.init() }
-
-            cell.configuration(cell: cellItem, indexPath: indexPath)
+            cell.cells = cells
             return cell
-            
+        
         case "smallCell":
             guard let cell = tableView.dequeueReusableCell(withIdentifier: RegisterCell.customCell) as? CustomTableViewCell else { return UITableViewCell.init() }
 
