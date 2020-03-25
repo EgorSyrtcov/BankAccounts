@@ -46,7 +46,6 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 day ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cU-MJ-fUm">
                         <rect key="frame" x="111" y="69" width="96" height="37"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="96" id="LDS-kI-RtB"/>
                             <constraint firstAttribute="height" constant="37" id="aUd-pU-QXK"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="20"/>

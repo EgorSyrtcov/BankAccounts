@@ -11,38 +11,24 @@ import UIKit
 
 class CurrentCell: UITableViewCell {
     
-    @IBOutlet weak var collectionView: UICollectionView!
-
-}
-
-extension CurrentCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    @IBOutlet weak var currentLabel: UILabel!
+    @IBOutlet weak var moneyLabel: UILabel!
+    @IBOutlet weak var view: UIView! {
+        didSet {
+            view.layer.cornerRadius = 20
+        }
+    }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    func configuration(cell: CellItem, indexPath: IndexPath) {
         
-        setupCollectionView()
-    }
-    
-    private func setupCollectionView() {
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.register(UINib.init(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "collectionViewID")
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.usesGroupingSeparator = true
+        currencyFormatter.numberStyle = .currency
+        currencyFormatter.locale = Locale.current
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewID", for: indexPath as IndexPath) as! CollectionViewCell
-        return cell
+        let priceString = currencyFormatter.string(from: cell.balance as NSNumber? ?? 0)!
+        
+        currentLabel.text = "Current Balance \(String(describing: cell.date ?? 0))"
+        moneyLabel.text = priceString
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:
-        UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    
-        return CGSize(width: 300, height: 200)
-    }
-    
 }
