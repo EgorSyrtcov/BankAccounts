@@ -41,12 +41,10 @@ class Main: UIViewController {
         
         Service.shared.fetchRequestCellItems { [weak self](cellItems) in
             self?.cellItems = cellItems ?? []
-            
-            DispatchQueue.main.async {
-                self?.tableView.reloadData()
-                self?.activityIndicator.stopAnimating()
-                self?.activityIndicator.isHidden = true
-            }
+      
+            self?.tableView.reloadData()
+            self?.activityIndicator.stopAnimating()
+            self?.activityIndicator.isHidden = true
         }
     }
 }

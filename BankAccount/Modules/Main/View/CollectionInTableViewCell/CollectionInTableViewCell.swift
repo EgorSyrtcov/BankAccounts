@@ -1,5 +1,5 @@
 //
-//  CurrentCell.swift
+//  CollectionInTableViewCell.swift
 //  BankAccount
 //
 //  Created by Egor Syrtcov on 3/20/20.
