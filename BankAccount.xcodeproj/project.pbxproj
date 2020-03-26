@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E41F390242B642900B05766 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E41F38E242B642900B05766 /* CollectionViewCell.swift */; };
+		2E41F391242B642900B05766 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E41F38F242B642900B05766 /* CollectionViewCell.xib */; };
+		2E41F39A242B918E00B05766 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E41F399242B918E00B05766 /* Service.swift */; };
 		2E6F121F242499D600786E2C /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6F121E242499D600786E2C /* AccountVC.swift */; };
 		2E6F1221242499EF00786E2C /* AccountVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E6F1220242499EF00786E2C /* AccountVC.storyboard */; };
 		2E6F122624249C4700786E2C /* EmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6F122524249C4700786E2C /* EmailVC.swift */; };
 		2E6F122824249C7100786E2C /* EmailVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E6F122724249C7100786E2C /* EmailVC.storyboard */; };
 		2E6F122D24249D7C00786E2C /* CancelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6F122C24249D7C00786E2C /* CancelVC.swift */; };
 		2E6F122F24249DDB00786E2C /* CancelVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E6F122E24249DDB00786E2C /* CancelVC.storyboard */; };
-		2E6F12322424C39500786E2C /* CurrentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6F12302424C39500786E2C /* CurrentCell.swift */; };
-		2E6F12332424C39500786E2C /* CurrentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E6F12312424C39500786E2C /* CurrentCell.xib */; };
+		2E6F12322424C39500786E2C /* CollectionInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6F12302424C39500786E2C /* CollectionInTableViewCell.swift */; };
+		2E6F12332424C39500786E2C /* CollectionInTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E6F12312424C39500786E2C /* CollectionInTableViewCell.xib */; };
 		2EBC6D3D24277A8B004F2A2D /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBC6D3C24277A8B004F2A2D /* Cell.swift */; };
 		2EBC83EC241FC34F00698837 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EBC83EB241FC34F00698837 /* Main.storyboard */; };
-		2EE43BBD2427581E0088707A /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE43BBC2427581E0088707A /* AlamofireObjectMapper.framework */; };
-		2EE43BBF2427583E0088707A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE43BBE2427583E0088707A /* Alamofire.framework */; };
-		2EE43BC1242758420088707A /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE43BC0242758420088707A /* ObjectMapper.framework */; };
 		2EEB0007241FB30700B0C74B /* StoryboardInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEB0006241FB30700B0C74B /* StoryboardInitializable.swift */; };
 		2EEB000B241FB35A00B0C74B /* UIViewControllerStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEB000A241FB35A00B0C74B /* UIViewControllerStoryboard.swift */; };
 		2EEB000D241FB37100B0C74B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEB000C241FB37100B0C74B /* Color.swift */; };
@@ -30,19 +30,22 @@
 		2EEF6AFC2428B32800D530FC /* CellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF6AFB2428B32800D530FC /* CellItem.swift */; };
 		2EF2C4352421F2F0004BEC91 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF2C4332421F2F0004BEC91 /* CustomTableViewCell.swift */; };
 		2EF2C4362421F2F0004BEC91 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EF2C4342421F2F0004BEC91 /* CustomTableViewCell.xib */; };
-		6BC537732321FE0128C5FDE9 /* Pods_BankAccount.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6EF49CA19D0175EB10FC9B8 /* Pods_BankAccount.framework */; };
+		5686055F9A55557CF3AF7B61 /* Pods_BankAccount.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6EF49CA19D0175EB10FC9B8 /* Pods_BankAccount.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1A16D0FE99785F84BF1DD9A8 /* Pods-BankAccount.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BankAccount.release.xcconfig"; path = "Target Support Files/Pods-BankAccount/Pods-BankAccount.release.xcconfig"; sourceTree = "<group>"; };
+		2E41F38E242B642900B05766 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		2E41F38F242B642900B05766 /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		2E41F399242B918E00B05766 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		2E6F121E242499D600786E2C /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
 		2E6F1220242499EF00786E2C /* AccountVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountVC.storyboard; sourceTree = "<group>"; };
 		2E6F122524249C4700786E2C /* EmailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVC.swift; sourceTree = "<group>"; };
 		2E6F122724249C7100786E2C /* EmailVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmailVC.storyboard; sourceTree = "<group>"; };
 		2E6F122C24249D7C00786E2C /* CancelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelVC.swift; sourceTree = "<group>"; };
 		2E6F122E24249DDB00786E2C /* CancelVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CancelVC.storyboard; sourceTree = "<group>"; };
-		2E6F12302424C39500786E2C /* CurrentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCell.swift; sourceTree = "<group>"; };
-		2E6F12312424C39500786E2C /* CurrentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentCell.xib; sourceTree = "<group>"; };
+		2E6F12302424C39500786E2C /* CollectionInTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionInTableViewCell.swift; sourceTree = "<group>"; };
+		2E6F12312424C39500786E2C /* CollectionInTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionInTableViewCell.xib; sourceTree = "<group>"; };
 		2EBC6D3C24277A8B004F2A2D /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		2EBC83EB241FC34F00698837 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2EE43BBC2427581E0088707A /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AlamofireObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,16 +72,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EE43BC1242758420088707A /* ObjectMapper.framework in Frameworks */,
-				2EE43BBF2427583E0088707A /* Alamofire.framework in Frameworks */,
-				2EE43BBD2427581E0088707A /* AlamofireObjectMapper.framework in Frameworks */,
-				6BC537732321FE0128C5FDE9 /* Pods_BankAccount.framework in Frameworks */,
+				5686055F9A55557CF3AF7B61 /* Pods_BankAccount.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E41F38D242B642900B05766 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2E41F38E242B642900B05766 /* CollectionViewCell.swift */,
+				2E41F38F242B642900B05766 /* CollectionViewCell.xib */,
+			);
+			name = CollectionViewCell;
+			path = BankAccount/Modules/Main/View/CollectionViewCell;
+			sourceTree = SOURCE_ROOT;
+		};
 		2E6F121B2424997700786E2C /* Account */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +167,7 @@
 		2EBC6D3324275E25004F2A2D /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				2E41F399242B918E00B05766 /* Service.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -170,13 +181,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		2EEAFC732423AE28008DFE46 /* CurrentCell */ = {
+		2EEAFC732423AE28008DFE46 /* CollectionInTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				2E6F12302424C39500786E2C /* CurrentCell.swift */,
-				2E6F12312424C39500786E2C /* CurrentCell.xib */,
+				2E6F12302424C39500786E2C /* CollectionInTableViewCell.swift */,
+				2E6F12312424C39500786E2C /* CollectionInTableViewCell.xib */,
 			);
-			path = CurrentCell;
+			path = CollectionInTableViewCell;
 			sourceTree = "<group>";
 		};
 		2EEB0000241FB25D00B0C74B /* Main */ = {
@@ -202,7 +213,8 @@
 			isa = PBXGroup;
 			children = (
 				2EBC83EB241FC34F00698837 /* Main.storyboard */,
-				2EEAFC732423AE28008DFE46 /* CurrentCell */,
+				2E41F38D242B642900B05766 /* CollectionViewCell */,
+				2EEAFC732423AE28008DFE46 /* CollectionInTableViewCell */,
 				2EF2C43924222C0E004BEC91 /* CustomTableCell */,
 			);
 			path = View;
@@ -408,11 +420,12 @@
 				2EBC83EC241FC34F00698837 /* Main.storyboard in Resources */,
 				2EEBFFF5241FB15300B0C74B /* LaunchScreen.storyboard in Resources */,
 				2EF2C4362421F2F0004BEC91 /* CustomTableViewCell.xib in Resources */,
-				2E6F12332424C39500786E2C /* CurrentCell.xib in Resources */,
+				2E6F12332424C39500786E2C /* CollectionInTableViewCell.xib in Resources */,
 				2E6F1221242499EF00786E2C /* AccountVC.storyboard in Resources */,
 				2E6F122824249C7100786E2C /* EmailVC.storyboard in Resources */,
 				2E6F122F24249DDB00786E2C /* CancelVC.storyboard in Resources */,
 				2EEBFFF2241FB15300B0C74B /* Assets.xcassets in Resources */,
+				2E41F391242B642900B05766 /* CollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +479,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EEBFFED241FB15000B0C74B /* Main.swift in Sources */,
+				2E41F39A242B918E00B05766 /* Service.swift in Sources */,
 				2EEBFFEB241FB15000B0C74B /* AppDelegate.swift in Sources */,
 				2EF2C4352421F2F0004BEC91 /* CustomTableViewCell.swift in Sources */,
 				2EEB000B241FB35A00B0C74B /* UIViewControllerStoryboard.swift in Sources */,
@@ -473,8 +487,9 @@
 				2E6F122624249C4700786E2C /* EmailVC.swift in Sources */,
 				2E6F121F242499D600786E2C /* AccountVC.swift in Sources */,
 				2E6F122D24249D7C00786E2C /* CancelVC.swift in Sources */,
+				2E41F390242B642900B05766 /* CollectionViewCell.swift in Sources */,
 				2EEB0007241FB30700B0C74B /* StoryboardInitializable.swift in Sources */,
-				2E6F12322424C39500786E2C /* CurrentCell.swift in Sources */,
+				2E6F12322424C39500786E2C /* CollectionInTableViewCell.swift in Sources */,
 				2EBC6D3D24277A8B004F2A2D /* Cell.swift in Sources */,
 				2EEF6AFC2428B32800D530FC /* CellItem.swift in Sources */,
 			);
