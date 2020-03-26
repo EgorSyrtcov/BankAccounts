@@ -8,14 +8,18 @@
 
 import UIKit
 
+enum SizeForItemCell {
+    static let width = 250
+    static let height = 100
+}
 
-class CurrentCell: UITableViewCell {
+class CollectionInTableViewCell: UITableViewCell {
     
-    var cells = [CellItem]()
+    var cellItems = [CellItem]()
     @IBOutlet weak var collectionView: UICollectionView!
 }
 
-extension CurrentCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension CollectionInTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,19 +30,19 @@ extension CurrentCell: UICollectionViewDelegate, UICollectionViewDataSource, UIC
     private func setupCollectionView() {
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(UINib.init(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "collectionViewID")
+        collectionView.register(UINib.init(nibName: RegisterCell.collectionViewCell, bundle: nil), forCellWithReuseIdentifier: RegisterCell.collectionViewCell)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return cells.count
+        return cellItems.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewID", for: indexPath as IndexPath) as! CollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RegisterCell.collectionViewCell, for: indexPath as IndexPath) as? CollectionViewCell else { return CollectionViewCell() }
         cell.layer.cornerRadius = Layout.collectionCornerRadius
         
-        let cellItem = cells[indexPath.row]
+        let cellItem = cellItems[indexPath.row]
         
         cell.configuration(cell: cellItem, indexPath: indexPath)
         return cell
@@ -47,6 +51,6 @@ extension CurrentCell: UICollectionViewDelegate, UICollectionViewDataSource, UIC
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:
         UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: 250, height: 100)
+        return CGSize(width: SizeForItemCell.width, height: SizeForItemCell.height)
     }
 }

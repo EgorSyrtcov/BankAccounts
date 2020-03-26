@@ -15,7 +15,7 @@ class Service {
     static var shared = Service()
     private let urlString = "https://api.myjson.com/bins/uy08c"
     
-    func fetchData(completion: @escaping ([CellItem]?) ->()) {
+    func fetchRequestCellItems(completion: @escaping ([CellItem]?) ->()) {
         
         Alamofire.request(urlString).responseObject { (response: DataResponse<Cell>) in
             let cellsResponse = response.result.value

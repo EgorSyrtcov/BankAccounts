@@ -17,12 +17,13 @@ enum Layout {
 
 enum RegisterCell {
     static let customCell = "CustomTableViewCell"
-    static let currentCell = "CurrentCell"
+    static let currentCell = "CollectionInTableViewCell"
+    static let collectionViewCell = "CollectionViewCell"
 }
 
 class Main: UIViewController {
     
-    var cells = [CellItem]()
+    var cellItems = [CellItem]()
 
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -38,8 +39,8 @@ class Main: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Service.shared.fetchData { [weak self](cellItem) in
-            self?.cells = cellItem ?? []
+        Service.shared.fetchRequestCellItems { [weak self](cellItems) in
+            self?.cellItems = cellItems ?? []
             
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
@@ -53,17 +54,17 @@ class Main: UIViewController {
 extension Main: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cells.count
+        return cellItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cellItem = cells[indexPath.row]
+        let cellItem = cellItems[indexPath.row]
         
         switch cellItem.type {
         case "bigCell":
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: RegisterCell.currentCell) as? CurrentCell else { return UITableViewCell.init() }
-            cell.cells = cells
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: RegisterCell.currentCell) as? CollectionInTableViewCell else { return UITableViewCell.init() }
+            cell.cellItems = cellItems
             return cell
         
         case "smallCell":
@@ -80,7 +81,7 @@ extension Main: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         let cell = tableView.cellForRow(at: indexPath)
-        return cell is CurrentCell ? Layout.currentCellHeight : Layout.customCellHeight
+        return cell is CollectionInTableViewCell ? Layout.currentCellHeight : Layout.customCellHeight
     }
 }
 
