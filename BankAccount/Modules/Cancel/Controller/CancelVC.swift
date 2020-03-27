@@ -15,7 +15,8 @@ class CancelVC: UIViewController {
         
         let nameParseOffKey = Notification.Name(rawValue: parseOffKey)
         let nameParseOnKey = Notification.Name(rawValue: parseOnKey)
-
-       sender.isOn ? NotificationCenter.default.post(name: nameParseOnKey, object: nil) : NotificationCenter.default.post(name: nameParseOffKey, object: nil)
+        
+        let name = sender.isOn ? nameParseOnKey : nameParseOffKey
+        NotificationCenter.default.post(name: name, object: nil)
     }
 }
