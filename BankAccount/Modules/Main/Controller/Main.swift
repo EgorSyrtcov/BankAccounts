@@ -8,6 +8,9 @@
 
 import UIKit
 
+let parseOffKey = "parseOffKey"
+let parseOnKey = "parseOnKey"
+
 enum Layout {
     static let currentCellHeight: CGFloat = 150
     static let customCellHeight: CGFloat = 120
@@ -24,7 +27,7 @@ enum RegisterCell {
 class Main: UIViewController {
     
     var cellItems = [CellItem]()
-
+    
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView! {
@@ -36,16 +39,46 @@ class Main: UIViewController {
         }
     }
     
+    let offKey = Notification.Name(parseOffKey)
+    let onKey = Notification.Name(parseOnKey)
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        createObservers()
+        switchParseOn()
+    }
+    
+    // Создаем два наблюдателя
+    func createObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(switchParseOff), name: offKey, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(switchParseOn), name: onKey, object: nil)
+    }
+}
+
+// Функции парсинга данных или из сети или из Mock
+extension Main {
+
+   @objc func switchParseOff() {
+        self.cellItems = Service.shared.fetchMockRequest()
+        updateData()
+    }
+
+    @objc func switchParseOn() {
         Service.shared.fetchRequestCellItems { [weak self](cellItems) in
             self?.cellItems = cellItems ?? []
-      
-            self?.tableView.reloadData()
-            self?.activityIndicator.stopAnimating()
-            self?.activityIndicator.isHidden = true
+            self?.updateData()
         }
+    }
+
+    func updateData() {
+        tableView.reloadData()
+        activityIndicator.stopAnimating()
+        activityIndicator.isHidden = true
     }
 }
 
@@ -64,10 +97,10 @@ extension Main: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: RegisterCell.currentCell) as? CollectionInTableViewCell else { return UITableViewCell.init() }
             cell.cellItems = cellItems
             return cell
-        
+            
         case "smallCell":
             guard let cell = tableView.dequeueReusableCell(withIdentifier: RegisterCell.customCell) as? CustomTableViewCell else { return UITableViewCell.init() }
-
+            
             cell.configuration(cell: cellItem, indexPath: indexPath)
             return cell
             

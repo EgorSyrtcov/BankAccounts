@@ -17,7 +17,33 @@
                     <view key="view" contentMode="scaleToFill" id="apB-yQ-vWT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="DFf-6k-Wf3">
+                                <rect key="frame" x="72.5" y="437.5" width="269.5" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mock данные" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4t7-dP-KxC">
+                                        <rect key="frame" x="0.0" y="0.0" width="180.5" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gMX-JD-NgA">
+                                        <rect key="frame" x="220.5" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="switchAction:" destination="ftj-2t-QU1" eventType="valueChanged" id="UmX-nT-c6G"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="TuV-vw-fNR"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DFf-6k-Wf3" firstAttribute="centerX" secondItem="aVa-0a-Wxc" secondAttribute="centerX" id="bVQ-kb-fCH"/>
+                            <constraint firstItem="DFf-6k-Wf3" firstAttribute="centerY" secondItem="aVa-0a-Wxc" secondAttribute="centerY" id="l9z-7k-wFq"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="aVa-0a-Wxc"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="close" id="gG3-nE-asN"/>
