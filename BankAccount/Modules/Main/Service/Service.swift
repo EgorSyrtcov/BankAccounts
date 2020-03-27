@@ -14,6 +14,8 @@ class Service {
     
     static var shared = Service()
     private let urlString = "https://api.myjson.com/bins/uy08c"
+    private let urlStringBilling = "https://bankaccounts-andersen.herokuapp.com/allBilling"
+    private let urlStringTransaction = "https://bankaccounts-andersen.herokuapp.com/allTransaction"
     
     func fetchRequestCellItems(completion: @escaping ([CellItem]?) ->()) {
         
@@ -23,8 +25,28 @@ class Service {
         }
     }
     
-    func fetchMockRequest() -> [CellItem] {
-        return [CellItem(type: "bigCell", balance: 10000, date: 1584709316, icon: nil, sum: nil, title: nil), CellItem(type: "smallCell", balance: 184, date: 1584709316, icon: "shop", sum: 180, title: "Market"), CellItem(type: "smallCell", balance: 130, date: 1584509316, icon: "shop", sum: 160, title: "Backstar"), CellItem(type: "smallCell", balance: 120, date: 2584709316, icon: "shop", sum: 230, title: "AppStore")]
+    func fetchRequestBillingItems(completion: @escaping ([Billing]?) ->()) {
+        Alamofire.request(urlStringBilling).responseArray { (response: DataResponse<[Billing]>) in
+            var billingItems = [Billing]()
+            let billingArray = response.result.value
+            
+            if let billingArray = billingArray {
+                billingArray.forEach({billingItems.append($0)})
+                 completion(billingItems)
+            }
+        }
+    }
+    
+    func fetchRequestTransactionItems(completion: @escaping ([Transaction]?) ->()) {
+        Alamofire.request(urlStringTransaction).responseArray { (response: DataResponse<[Transaction]>) in
+            var transactionItems = [Transaction]()
+            let transactionArray = response.result.value
+            
+            if let transactionArray = transactionArray {
+                transactionArray.forEach({transactionItems.append($0)})
+                completion(transactionItems)
+            }      
+        }
     }
 }
 

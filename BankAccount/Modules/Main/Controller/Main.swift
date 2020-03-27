@@ -8,8 +8,8 @@
 
 import UIKit
 
-let parseOffKey = "parseOffKey"
-let parseOnKey = "parseOnKey"
+//let parseOffKey = "parseOffKey"
+//let parseOnKey = "parseOnKey"
 
 enum Layout {
     static let currentCellHeight: CGFloat = 150
@@ -26,7 +26,8 @@ enum RegisterCell {
 
 class Main: UIViewController {
     
-    var cellItems = [CellItem]()
+    var billingItems = [Billing]()
+    var transactionItems = [Transaction]()
     
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -39,42 +40,19 @@ class Main: UIViewController {
         }
     }
     
-    let offKey = Notification.Name(parseOffKey)
-    let onKey = Notification.Name(parseOnKey)
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        createObservers()
-        switchParseOn()
-    }
-    
-    // Создаем два наблюдателя
-    func createObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(switchParseOff), name: offKey, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(switchParseOn), name: onKey, object: nil)
-    }
-}
-
-// Функции парсинга данных или из сети или из Mock
-extension Main {
-
-   @objc func switchParseOff() {
-        self.cellItems = Service.shared.fetchMockRequest()
-        updateData()
-    }
-
-    @objc func switchParseOn() {
-        Service.shared.fetchRequestCellItems { [weak self](cellItems) in
-            self?.cellItems = cellItems ?? []
+        Service.shared.fetchRequestTransactionItems { [weak self](transactionItems) in
+            self?.transactionItems = transactionItems ?? []
+        }
+        
+        Service.shared.fetchRequestBillingItems { [weak self](billingItems) in
+            self?.billingItems = billingItems ?? []
             self?.updateData()
         }
     }
-
+    
     func updateData() {
         tableView.reloadData()
         activityIndicator.stopAnimating()
@@ -85,23 +63,22 @@ extension Main {
 extension Main: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cellItems.count
+        return transactionItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cellItem = cellItems[indexPath.row]
-        
-        switch cellItem.type {
-        case "bigCell":
+        switch indexPath.row {
+        case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: RegisterCell.currentCell) as? CollectionInTableViewCell else { return UITableViewCell.init() }
-            cell.cellItems = cellItems
+            cell.billingItems = billingItems
             return cell
             
-        case "smallCell":
+        case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: RegisterCell.customCell) as? CustomTableViewCell else { return UITableViewCell.init() }
+            let transactionItem = transactionItems[indexPath.row]
             
-            cell.configuration(cell: cellItem, indexPath: indexPath)
+            cell.configuration(cell: transactionItem, indexPath: indexPath)
             return cell
             
         default:
@@ -111,8 +88,12 @@ extension Main: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        let cell = tableView.cellForRow(at: indexPath)
-        return cell is CollectionInTableViewCell ? Layout.currentCellHeight : Layout.customCellHeight
+        switch indexPath.row {
+        case 0:
+            return Layout.currentCellHeight
+        default:
+            return Layout.customCellHeight
+        }
     }
 }
 

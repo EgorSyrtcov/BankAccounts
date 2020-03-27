@@ -13,10 +13,10 @@ class CancelVC: UIViewController {
     // Создаем два наблюдаемых объекта 
     @IBAction func switchAction(_ sender: UISwitch) {
         
-        let nameParseOffKey = Notification.Name(rawValue: parseOffKey)
-        let nameParseOnKey = Notification.Name(rawValue: parseOnKey)
-        
-        let name = sender.isOn ? nameParseOnKey : nameParseOffKey
-        NotificationCenter.default.post(name: name, object: nil)
+//        let nameParseOffKey = Notification.Name(rawValue: parseOffKey)
+//        let nameParseOnKey = Notification.Name(rawValue: parseOnKey)
+//        
+//        let name = sender.isOn ? nameParseOnKey : nameParseOffKey
+//        NotificationCenter.default.post(name: name, object: nil)
     }
 }

@@ -18,7 +18,6 @@
 		2E6F122F24249DDB00786E2C /* CancelVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E6F122E24249DDB00786E2C /* CancelVC.storyboard */; };
 		2E6F12322424C39500786E2C /* CollectionInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6F12302424C39500786E2C /* CollectionInTableViewCell.swift */; };
 		2E6F12332424C39500786E2C /* CollectionInTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E6F12312424C39500786E2C /* CollectionInTableViewCell.xib */; };
-		2EBC6D3D24277A8B004F2A2D /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBC6D3C24277A8B004F2A2D /* Cell.swift */; };
 		2EBC83EC241FC34F00698837 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EBC83EB241FC34F00698837 /* Main.storyboard */; };
 		2EEB0007241FB30700B0C74B /* StoryboardInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEB0006241FB30700B0C74B /* StoryboardInitializable.swift */; };
 		2EEB000B241FB35A00B0C74B /* UIViewControllerStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEB000A241FB35A00B0C74B /* UIViewControllerStoryboard.swift */; };
@@ -27,7 +26,8 @@
 		2EEBFFED241FB15000B0C74B /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEBFFEC241FB15000B0C74B /* Main.swift */; };
 		2EEBFFF2241FB15300B0C74B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EEBFFF1241FB15300B0C74B /* Assets.xcassets */; };
 		2EEBFFF5241FB15300B0C74B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EEBFFF3241FB15300B0C74B /* LaunchScreen.storyboard */; };
-		2EEF6AFC2428B32800D530FC /* CellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF6AFB2428B32800D530FC /* CellItem.swift */; };
+		2EEE3EB8242DC7800063CC36 /* Billing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEE3EB7242DC7800063CC36 /* Billing.swift */; };
+		2EEE3EBA242DC8D10063CC36 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEE3EB9242DC8D10063CC36 /* Transaction.swift */; };
 		2EF2C4352421F2F0004BEC91 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF2C4332421F2F0004BEC91 /* CustomTableViewCell.swift */; };
 		2EF2C4362421F2F0004BEC91 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EF2C4342421F2F0004BEC91 /* CustomTableViewCell.xib */; };
 		5686055F9A55557CF3AF7B61 /* Pods_BankAccount.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6EF49CA19D0175EB10FC9B8 /* Pods_BankAccount.framework */; };
@@ -46,7 +46,6 @@
 		2E6F122E24249DDB00786E2C /* CancelVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CancelVC.storyboard; sourceTree = "<group>"; };
 		2E6F12302424C39500786E2C /* CollectionInTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionInTableViewCell.swift; sourceTree = "<group>"; };
 		2E6F12312424C39500786E2C /* CollectionInTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionInTableViewCell.xib; sourceTree = "<group>"; };
-		2EBC6D3C24277A8B004F2A2D /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		2EBC83EB241FC34F00698837 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2EE43BBC2427581E0088707A /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AlamofireObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EE43BBE2427583E0088707A /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,7 +59,8 @@
 		2EEBFFF1241FB15300B0C74B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2EEBFFF4241FB15300B0C74B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2EEBFFF6241FB15300B0C74B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2EEF6AFB2428B32800D530FC /* CellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellItem.swift; sourceTree = "<group>"; };
+		2EEE3EB7242DC7800063CC36 /* Billing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Billing.swift; sourceTree = "<group>"; };
+		2EEE3EB9242DC8D10063CC36 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		2EF2C4332421F2F0004BEC91 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		2EF2C4342421F2F0004BEC91 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		B815978FD8EFF366CE8F914E /* Pods-BankAccount.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BankAccount.debug.xcconfig"; path = "Target Support Files/Pods-BankAccount/Pods-BankAccount.debug.xcconfig"; sourceTree = "<group>"; };
@@ -175,8 +175,8 @@
 		2EE43BB7242755B80088707A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2EBC6D3C24277A8B004F2A2D /* Cell.swift */,
-				2EEF6AFB2428B32800D530FC /* CellItem.swift */,
+				2EEE3EB7242DC7800063CC36 /* Billing.swift */,
+				2EEE3EB9242DC8D10063CC36 /* Transaction.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -480,6 +480,7 @@
 			files = (
 				2EEBFFED241FB15000B0C74B /* Main.swift in Sources */,
 				2E41F39A242B918E00B05766 /* Service.swift in Sources */,
+				2EEE3EBA242DC8D10063CC36 /* Transaction.swift in Sources */,
 				2EEBFFEB241FB15000B0C74B /* AppDelegate.swift in Sources */,
 				2EF2C4352421F2F0004BEC91 /* CustomTableViewCell.swift in Sources */,
 				2EEB000B241FB35A00B0C74B /* UIViewControllerStoryboard.swift in Sources */,
@@ -488,10 +489,9 @@
 				2E6F121F242499D600786E2C /* AccountVC.swift in Sources */,
 				2E6F122D24249D7C00786E2C /* CancelVC.swift in Sources */,
 				2E41F390242B642900B05766 /* CollectionViewCell.swift in Sources */,
+				2EEE3EB8242DC7800063CC36 /* Billing.swift in Sources */,
 				2EEB0007241FB30700B0C74B /* StoryboardInitializable.swift in Sources */,
 				2E6F12322424C39500786E2C /* CollectionInTableViewCell.swift in Sources */,
-				2EBC6D3D24277A8B004F2A2D /* Cell.swift in Sources */,
-				2EEF6AFC2428B32800D530FC /* CellItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
