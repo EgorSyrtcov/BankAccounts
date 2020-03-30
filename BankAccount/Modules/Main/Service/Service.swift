@@ -13,17 +13,8 @@ import AlamofireObjectMapper
 class Service {
     
     static var shared = Service()
-    private let urlString = "https://api.myjson.com/bins/uy08c"
     private let urlStringBilling = "https://bankaccounts-andersen.herokuapp.com/allBilling"
     private let urlStringTransaction = "https://bankaccounts-andersen.herokuapp.com/allTransaction"
-    
-    func fetchRequestCellItems(completion: @escaping ([CellItem]?) ->()) {
-        
-        Alamofire.request(urlString).responseObject { (response: DataResponse<Cell>) in
-            let cellsResponse = response.result.value
-            completion(cellsResponse?.items)
-        }
-    }
     
     func fetchRequestBillingItems(completion: @escaping ([Billing]?) ->()) {
         Alamofire.request(urlStringBilling).responseArray { (response: DataResponse<[Billing]>) in

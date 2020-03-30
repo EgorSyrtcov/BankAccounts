@@ -8,9 +8,6 @@
 
 import UIKit
 
-//let parseOffKey = "parseOffKey"
-//let parseOnKey = "parseOnKey"
-
 enum Layout {
     static let currentCellHeight: CGFloat = 150
     static let customCellHeight: CGFloat = 120
@@ -26,8 +23,8 @@ enum RegisterCell {
 
 class Main: UIViewController {
     
-    var billingItems = [Billing]()
-    var transactionItems = [Transaction]()
+    var billingItems = [Billing]() // вверхний показатель, коллекция
+    var transactionItems = [Transaction]() // нижний показатель, таблица
     
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -63,7 +60,11 @@ class Main: UIViewController {
 extension Main: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return transactionItems.count
+        if billingItems.count > 0 {
+            return transactionItems.count + 1
+        } else {
+            return transactionItems.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -73,16 +74,11 @@ extension Main: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: RegisterCell.currentCell) as? CollectionInTableViewCell else { return UITableViewCell.init() }
             cell.billingItems = billingItems
             return cell
-            
-        case 1:
+        default:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: RegisterCell.customCell) as? CustomTableViewCell else { return UITableViewCell.init() }
-            let transactionItem = transactionItems[indexPath.row]
-            
+            let transactionItem = transactionItems[indexPath.row - 1]
             cell.configuration(cell: transactionItem, indexPath: indexPath)
             return cell
-            
-        default:
-            return UITableViewCell()
         }
     }
     
