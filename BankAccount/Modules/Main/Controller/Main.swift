@@ -60,11 +60,8 @@ class Main: UIViewController {
 extension Main: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if billingItems.count > 0 {
-            return transactionItems.count + 1
-        } else {
-            return transactionItems.count
-        }
+        
+        return billingItems.count > 0 ? transactionItems.count + 1 : transactionItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
