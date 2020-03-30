@@ -40,13 +40,15 @@ class Main: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Service.shared.fetchRequestTransactionItems { [weak self](transactionItems) in
-            self?.transactionItems = transactionItems ?? []
-        }
-        
-        Service.shared.fetchRequestBillingItems { [weak self](billingItems) in
-            self?.billingItems = billingItems ?? []
-            self?.updateData()
+        Service.shared.group.notify(queue: .global()) {
+            Service.shared.fetchRequestTransactionItems { [weak self](transactionItems) in
+                self?.transactionItems = transactionItems ?? []
+            }
+            
+            Service.shared.fetchRequestBillingItems { [weak self](billingItems) in
+                self?.billingItems = billingItems ?? []
+                self?.updateData()
+            }
         }
     }
     
