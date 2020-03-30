@@ -10,19 +10,21 @@ import Foundation
 import Alamofire
 import AlamofireObjectMapper
 
+
+enum AdressBankAccount: String {
+    case allBilling = "allBilling"
+    case allTransaction = "allTransaction"
+}
+
 class Service {
-    
+
     static var shared = Service()
     
-    let group = DispatchGroup()
-    
-    private let urlStringBilling = "https://bankaccounts-andersen.herokuapp.com/allBilling"
-    private let urlStringTransaction = "https://bankaccounts-andersen.herokuapp.com/allTransaction"
-    
-    
+    private let urlString = AdressParse.getStringUrl(forKey: "adressParse")
+
     func fetchRequestBillingItems(completion: @escaping ([Billing]?) ->()) {
-        group.enter()
-        Alamofire.request(urlStringBilling).responseArray { (response: DataResponse<[Billing]>) in
+
+        Alamofire.request("\(urlString)\(AdressBankAccount.allBilling)").responseArray { (response: DataResponse<[Billing]>) in
             var billingItems = [Billing]()
             let billingArray = response.result.value
             
@@ -31,12 +33,10 @@ class Service {
                  completion(billingItems)
             }
         }
-        group.leave()
     }
     
     func fetchRequestTransactionItems(completion: @escaping ([Transaction]?) ->()) {
-        group.enter()
-        Alamofire.request(urlStringTransaction).responseArray { (response: DataResponse<[Transaction]>) in
+        Alamofire.request("\(urlString)\(AdressBankAccount.allTransaction)").responseArray { (response: DataResponse<[Transaction]>) in
             var transactionItems = [Transaction]()
             let transactionArray = response.result.value
             
@@ -45,7 +45,6 @@ class Service {
                 completion(transactionItems)
             }      
         }
-        group.leave()
     }
 }
 

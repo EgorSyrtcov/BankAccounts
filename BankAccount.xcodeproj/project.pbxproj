@@ -30,6 +30,7 @@
 		2EEE3EBA242DC8D10063CC36 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEE3EB9242DC8D10063CC36 /* Transaction.swift */; };
 		2EF2C4352421F2F0004BEC91 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF2C4332421F2F0004BEC91 /* CustomTableViewCell.swift */; };
 		2EF2C4362421F2F0004BEC91 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EF2C4342421F2F0004BEC91 /* CustomTableViewCell.xib */; };
+		2EF5068B243232E00056B656 /* AdressParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF5068A243232E00056B656 /* AdressParse.swift */; };
 		5686055F9A55557CF3AF7B61 /* Pods_BankAccount.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6EF49CA19D0175EB10FC9B8 /* Pods_BankAccount.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		2EEE3EB9242DC8D10063CC36 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		2EF2C4332421F2F0004BEC91 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		2EF2C4342421F2F0004BEC91 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		2EF5068A243232E00056B656 /* AdressParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdressParse.swift; sourceTree = "<group>"; };
 		B815978FD8EFF366CE8F914E /* Pods-BankAccount.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BankAccount.debug.xcconfig"; path = "Target Support Files/Pods-BankAccount/Pods-BankAccount.debug.xcconfig"; sourceTree = "<group>"; };
 		E6EF49CA19D0175EB10FC9B8 /* Pods_BankAccount.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BankAccount.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				2E41F399242B918E00B05766 /* Service.swift */,
+				2EF5068A243232E00056B656 /* AdressParse.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 				2E41F390242B642900B05766 /* CollectionViewCell.swift in Sources */,
 				2EEE3EB8242DC7800063CC36 /* Billing.swift in Sources */,
 				2EEB0007241FB30700B0C74B /* StoryboardInitializable.swift in Sources */,
+				2EF5068B243232E00056B656 /* AdressParse.swift in Sources */,
 				2E6F12322424C39500786E2C /* CollectionInTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
