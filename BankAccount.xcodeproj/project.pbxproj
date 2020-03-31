@@ -28,7 +28,6 @@
 		2EEBFFF5241FB15300B0C74B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EEBFFF3241FB15300B0C74B /* LaunchScreen.storyboard */; };
 		2EEE3EB8242DC7800063CC36 /* Billing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEE3EB7242DC7800063CC36 /* Billing.swift */; };
 		2EEE3EBA242DC8D10063CC36 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEE3EB9242DC8D10063CC36 /* Transaction.swift */; };
-		2EF137FD243350E00072FB27 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF137FC243350E00072FB27 /* LoaderView.swift */; };
 		2EF2C4352421F2F0004BEC91 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF2C4332421F2F0004BEC91 /* CustomTableViewCell.swift */; };
 		2EF2C4362421F2F0004BEC91 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EF2C4342421F2F0004BEC91 /* CustomTableViewCell.xib */; };
 		5686055F9A55557CF3AF7B61 /* Pods_BankAccount.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6EF49CA19D0175EB10FC9B8 /* Pods_BankAccount.framework */; };
@@ -62,7 +61,6 @@
 		2EEBFFF6241FB15300B0C74B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2EEE3EB7242DC7800063CC36 /* Billing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Billing.swift; sourceTree = "<group>"; };
 		2EEE3EB9242DC8D10063CC36 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
-		2EF137FC243350E00072FB27 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		2EF2C4332421F2F0004BEC91 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		2EF2C4342421F2F0004BEC91 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		B815978FD8EFF366CE8F914E /* Pods-BankAccount.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BankAccount.debug.xcconfig"; path = "Target Support Files/Pods-BankAccount/Pods-BankAccount.debug.xcconfig"; sourceTree = "<group>"; };
@@ -321,7 +319,6 @@
 		2EEBFFFF241FB24600B0C74B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				2EF137FB243350C00072FB27 /* LoaderView */,
 				2EEB0000241FB25D00B0C74B /* Main */,
 				2E6F121B2424997700786E2C /* Account */,
 				2E6F122224249C0C00786E2C /* Email */,
@@ -329,14 +326,6 @@
 				2EEB0004241FB2C300B0C74B /* Splash */,
 			);
 			path = Modules;
-			sourceTree = "<group>";
-		};
-		2EF137FB243350C00072FB27 /* LoaderView */ = {
-			isa = PBXGroup;
-			children = (
-				2EF137FC243350E00072FB27 /* LoaderView.swift */,
-			);
-			path = LoaderView;
 			sourceTree = "<group>";
 		};
 		2EF2C43924222C0E004BEC91 /* CustomTableCell */ = {
@@ -491,7 +480,6 @@
 			files = (
 				2EEBFFED241FB15000B0C74B /* Main.swift in Sources */,
 				2E41F39A242B918E00B05766 /* Service.swift in Sources */,
-				2EF137FD243350E00072FB27 /* LoaderView.swift in Sources */,
 				2EEE3EBA242DC8D10063CC36 /* Transaction.swift in Sources */,
 				2EEBFFEB241FB15000B0C74B /* AppDelegate.swift in Sources */,
 				2EF2C4352421F2F0004BEC91 /* CustomTableViewCell.swift in Sources */,

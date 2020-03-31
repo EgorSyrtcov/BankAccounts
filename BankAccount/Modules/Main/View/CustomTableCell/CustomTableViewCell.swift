@@ -21,8 +21,13 @@ class CustomTableViewCell: UITableViewCell {
     
     func configuration(cell: Transaction, indexPath: IndexPath) {
      
-        onlineLabel.text = "Online"
+        mainImage.image = UIImage(named: cell.icon ?? "basket")
+        
+        onlineLabel.text = cell.icon
         timeDayLabel.text = String(describing: cell.date ?? 0)
-        moneyLabel.text = "-$ \(String(describing: cell.sum ?? 0))"
+        
+        let balance = Double(cell.sum ?? 0)
+        let priceString = String(format: "$%.02f", balance)
+        moneyLabel.text = priceString
     }
 }

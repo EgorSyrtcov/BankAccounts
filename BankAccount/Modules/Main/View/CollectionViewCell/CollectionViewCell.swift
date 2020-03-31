@@ -14,10 +14,12 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var moneyLabel: UILabel!
    
     func configuration(cell: Billing, indexPath: IndexPath) {
-    
-        let priceString = "\(cell.balance ?? "Нет денег")"
-    
-        currentLabel.text = "Current Balance \(String(describing: cell.date ?? 0))"
+        let myData = cell.date ?? 0
+        let timeInterval = NSDate(timeIntervalSinceNow: TimeInterval(myData))
+        currentLabel.text = "Data \(timeInterval)"
+        
+        let balance = Double(cell.balance ?? "")
+        let priceString = String(format: "$%.02f", balance ?? 0)
         moneyLabel.text = priceString
     }
 }
