@@ -22,31 +22,30 @@
                         <rect key="frame" x="10" y="26" width="81" height="80"/>
                         <color key="backgroundColor" red="0.18785768750000001" green="0.057023361330000001" blue="0.28977048399999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="80" id="36Q-ng-GGi"/>
-                            <constraint firstAttribute="width" constant="81" id="fXt-Go-IXm"/>
+                            <constraint firstAttribute="height" constant="80" id="d1r-5F-qCx"/>
+                            <constraint firstAttribute="width" constant="81" id="xGq-tp-haA"/>
                         </constraints>
                         <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="Groceries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0C-LZ-ytv">
-                        <rect key="frame" x="111" y="26" width="96" height="36"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="249" text="Groceries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0C-LZ-ytv">
+                        <rect key="frame" x="111" y="26" width="194" height="36"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="36" id="PBV-Bq-liN"/>
-                            <constraint firstAttribute="width" priority="750" constant="96" id="XSJ-7u-Fgi"/>
+                            <constraint firstAttribute="height" constant="36" id="bYe-uu-eQh"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-$120.93" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tnr-Q2-Vif">
-                        <rect key="frame" x="217" y="26" width="183" height="36"/>
+                        <rect key="frame" x="315" y="26" width="85" height="36"/>
                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 day ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cU-MJ-fUm">
-                        <rect key="frame" x="111" y="69" width="96" height="37"/>
+                        <rect key="frame" x="111" y="69" width="289" height="37"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="37" id="aUd-pU-QXK"/>
+                            <constraint firstAttribute="height" constant="37" id="73p-E9-O9J"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="20"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -55,17 +54,17 @@
                 </subviews>
                 <color key="backgroundColor" red="0.71003466839999996" green="0.47045683859999998" blue="0.58002930880000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
-                    <constraint firstItem="8cU-MJ-fUm" firstAttribute="bottom" secondItem="vgK-9U-3zl" secondAttribute="bottom" id="0ns-0N-rQh"/>
-                    <constraint firstItem="Tnr-Q2-Vif" firstAttribute="centerY" secondItem="e0C-LZ-ytv" secondAttribute="centerY" id="7jX-zV-GOQ"/>
-                    <constraint firstItem="vgK-9U-3zl" firstAttribute="leading" secondItem="9Qd-FL-SHb" secondAttribute="leading" constant="10" id="FAI-GJ-lbH"/>
-                    <constraint firstItem="8cU-MJ-fUm" firstAttribute="trailing" secondItem="e0C-LZ-ytv" secondAttribute="trailing" id="IQp-ar-hQh"/>
-                    <constraint firstAttribute="trailing" secondItem="Tnr-Q2-Vif" secondAttribute="trailing" constant="20" id="SJN-HJ-EsK"/>
-                    <constraint firstItem="8cU-MJ-fUm" firstAttribute="leading" secondItem="e0C-LZ-ytv" secondAttribute="leading" id="TLK-qM-cyS"/>
-                    <constraint firstItem="Tnr-Q2-Vif" firstAttribute="leading" secondItem="e0C-LZ-ytv" secondAttribute="trailing" constant="10" id="VNa-kK-o06"/>
-                    <constraint firstItem="vgK-9U-3zl" firstAttribute="centerY" secondItem="9Qd-FL-SHb" secondAttribute="centerY" id="aok-9y-TBT"/>
-                    <constraint firstItem="Tnr-Q2-Vif" firstAttribute="top" secondItem="e0C-LZ-ytv" secondAttribute="top" id="quE-C1-38P"/>
-                    <constraint firstItem="e0C-LZ-ytv" firstAttribute="leading" secondItem="vgK-9U-3zl" secondAttribute="trailing" constant="20" id="tDH-aO-yGd"/>
-                    <constraint firstItem="e0C-LZ-ytv" firstAttribute="top" secondItem="vgK-9U-3zl" secondAttribute="top" id="zhg-pK-p7O"/>
+                    <constraint firstAttribute="trailing" secondItem="8cU-MJ-fUm" secondAttribute="trailing" constant="20" id="076-Si-jW5"/>
+                    <constraint firstItem="vgK-9U-3zl" firstAttribute="centerY" secondItem="9Qd-FL-SHb" secondAttribute="centerY" id="6KK-lW-SNP"/>
+                    <constraint firstItem="e0C-LZ-ytv" firstAttribute="top" secondItem="vgK-9U-3zl" secondAttribute="top" id="940-ZM-pdt"/>
+                    <constraint firstItem="Tnr-Q2-Vif" firstAttribute="top" secondItem="e0C-LZ-ytv" secondAttribute="top" id="AGJ-kJ-PrW"/>
+                    <constraint firstItem="8cU-MJ-fUm" firstAttribute="bottom" secondItem="vgK-9U-3zl" secondAttribute="bottom" id="E2o-20-F7J"/>
+                    <constraint firstItem="Tnr-Q2-Vif" firstAttribute="height" secondItem="e0C-LZ-ytv" secondAttribute="height" id="Jrc-gP-2Oc"/>
+                    <constraint firstItem="vgK-9U-3zl" firstAttribute="leading" secondItem="9Qd-FL-SHb" secondAttribute="leading" constant="10" id="Ldu-HD-eYS"/>
+                    <constraint firstItem="e0C-LZ-ytv" firstAttribute="leading" secondItem="vgK-9U-3zl" secondAttribute="trailing" constant="20" id="SzA-GD-L0o"/>
+                    <constraint firstItem="8cU-MJ-fUm" firstAttribute="leading" secondItem="e0C-LZ-ytv" secondAttribute="leading" id="Tso-e1-QlQ"/>
+                    <constraint firstItem="Tnr-Q2-Vif" firstAttribute="leading" secondItem="e0C-LZ-ytv" secondAttribute="trailing" constant="10" id="nJv-Iq-auM"/>
+                    <constraint firstAttribute="trailing" secondItem="Tnr-Q2-Vif" secondAttribute="trailing" constant="20" id="qLc-5u-uNy"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

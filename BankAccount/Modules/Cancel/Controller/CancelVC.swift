@@ -10,9 +10,9 @@ import UIKit
 
 class CancelVC: UIViewController {
 
-    // Создаем два наблюдаемых объекта 
+    // Создаем два наблюдаемых объекта
     @IBAction func switchAction(_ sender: UISwitch) {
-        
+
         let nameParseOffKey = Notification.Name(rawValue: parseOffKey)
         let nameParseOnKey = Notification.Name(rawValue: parseOnKey)
         

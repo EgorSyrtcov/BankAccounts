@@ -19,7 +19,7 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var timeDayLabel: UILabel!
     @IBOutlet weak var moneyLabel: UILabel!
     
-    func configuration(cell: CellItem, indexPath: IndexPath) {
+    func configuration(cell: Transaction, indexPath: IndexPath) {
      
         onlineLabel.text = "Online"
         timeDayLabel.text = String(describing: cell.date ?? 0)

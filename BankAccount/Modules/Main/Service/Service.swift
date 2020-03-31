@@ -10,21 +10,66 @@ import Foundation
 import Alamofire
 import AlamofireObjectMapper
 
+
+enum AdressBankAccount: String {
+    case allBilling = "allBilling"
+    case allTransaction = "allTransaction"
+}
+
+enum KeyUrl: String {
+    case adressParse = "adressParse"
+}
+
 class Service {
-    
+
     static var shared = Service()
-    private let urlString = "https://api.myjson.com/bins/uy08c"
+    private var urlString = ""
     
-    func fetchRequestCellItems(completion: @escaping ([CellItem]?) ->()) {
-        
-        Alamofire.request(urlString).responseObject { (response: DataResponse<Cell>) in
-            let cellsResponse = response.result.value
-            completion(cellsResponse?.items)
+    init() {
+        urlString = getStringUrl(forKey: KeyUrl.adressParse.rawValue)
+    }
+    
+//    func fetchRequestItems<T>(urlString: String, completion: @escaping ([T]?) ->()) {
+//        Alamofire.request(urlString).responseArray {
+//            (response: DataResponse<[T]>) in
+//            var items = [T]()
+//            let array = response.result.value
+//
+//            if let array = array {
+//                array.forEach({items.append($0)})
+//                completion(items)
+//            }
+//        }
+//    }
+
+    func fetchRequestBillingItems(completion: @escaping ([Billing]?) ->()) {
+
+        Alamofire.request("\(urlString)\(AdressBankAccount.allBilling)").responseArray { (response: DataResponse<[Billing]>) in
+            var billingItems = [Billing]()
+            let billingArray = response.result.value
+            
+            if let billingArray = billingArray {
+                billingArray.forEach({billingItems.append($0)})
+                 completion(billingItems)
+            }
         }
     }
     
-    func fetchMockRequest() -> [CellItem] {
-        return [CellItem(type: "bigCell", balance: 10000, date: 1584709316, icon: nil, sum: nil, title: nil), CellItem(type: "smallCell", balance: 184, date: 1584709316, icon: "shop", sum: 180, title: "Market"), CellItem(type: "smallCell", balance: 130, date: 1584509316, icon: "shop", sum: 160, title: "Backstar"), CellItem(type: "smallCell", balance: 120, date: 2584709316, icon: "shop", sum: 230, title: "AppStore")]
+    func fetchRequestTransactionItems(completion: @escaping ([Transaction]?) ->()) {
+        Alamofire.request("\(urlString)\(AdressBankAccount.allTransaction)").responseArray { (response: DataResponse<[Transaction]>) in
+            var transactionItems = [Transaction]()
+            let transactionArray = response.result.value
+            
+            if let transactionArray = transactionArray {
+                transactionArray.forEach({transactionItems.append($0)})
+                completion(transactionItems)
+            }      
+        }
+    }
+    
+    func getStringUrl(forKey key: String) -> String {
+        guard let value = Bundle.main.infoDictionary?[key] as? String else { fatalError("Could not find value for key \(key) in Info.plist") }
+        return value
     }
 }
 

@@ -15,7 +15,7 @@ enum SizeForItemCell {
 
 class CollectionInTableViewCell: UITableViewCell {
     
-    var cellItems = [CellItem]()
+    var billingItems = [Billing]()
     @IBOutlet weak var collectionView: UICollectionView!
 }
 
@@ -34,7 +34,7 @@ extension CollectionInTableViewCell: UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return cellItems.count
+        return billingItems.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -42,9 +42,9 @@ extension CollectionInTableViewCell: UICollectionViewDelegate, UICollectionViewD
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RegisterCell.collectionViewCell, for: indexPath as IndexPath) as? CollectionViewCell else { return CollectionViewCell() }
         cell.layer.cornerRadius = Layout.collectionCornerRadius
         
-        let cellItem = cellItems[indexPath.row]
+        let billingItem = billingItems[indexPath.row]
         
-        cell.configuration(cell: cellItem, indexPath: indexPath)
+        cell.configuration(cell: billingItem, indexPath: indexPath)
         return cell
     }
     
