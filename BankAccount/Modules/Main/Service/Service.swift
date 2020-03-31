@@ -16,11 +16,31 @@ enum AdressBankAccount: String {
     case allTransaction = "allTransaction"
 }
 
+enum KeyUrl: String {
+    case adressParse = "adressParse"
+}
+
 class Service {
 
     static var shared = Service()
+    private var urlString = ""
     
-    private let urlString = AdressParse.getStringUrl(forKey: "adressParse")
+    init() {
+        urlString = getStringUrl(forKey: KeyUrl.adressParse.rawValue)
+    }
+    
+//    func fetchRequestItems<T>(urlString: String, completion: @escaping ([T]?) ->()) {
+//        Alamofire.request(urlString).responseArray {
+//            (response: DataResponse<[T]>) in
+//            var items = [T]()
+//            let array = response.result.value
+//
+//            if let array = array {
+//                array.forEach({items.append($0)})
+//                completion(items)
+//            }
+//        }
+//    }
 
     func fetchRequestBillingItems(completion: @escaping ([Billing]?) ->()) {
 
@@ -45,6 +65,11 @@ class Service {
                 completion(transactionItems)
             }      
         }
+    }
+    
+    func getStringUrl(forKey key: String) -> String {
+        guard let value = Bundle.main.infoDictionary?[key] as? String else { fatalError("Could not find value for key \(key) in Info.plist") }
+        return value
     }
 }
 

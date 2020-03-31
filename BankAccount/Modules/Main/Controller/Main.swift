@@ -8,6 +8,9 @@
 
 import UIKit
 
+let parseOffKey = "parseOffKey"
+let parseOnKey = "parseOnKey"
+
 enum Layout {
     static let currentCellHeight: CGFloat = 150
     static let customCellHeight: CGFloat = 120
@@ -26,6 +29,19 @@ class Main: UIViewController {
     var billingItems = [Billing]() // вверхний показатель, коллекция
     var transactionItems = [Transaction]() // нижний показатель, таблица
     
+    // количество numberOfRowsInSection
+    var countItems = 0 {
+        didSet {
+            countItems = billingItems.count > 0 ? (transactionItems.count + 1) : (transactionItems.count)
+        }
+    }
+    // Отнимать единицу в ячейке CustomTableViewCell или нет
+    var transactionFirst = 0 {
+        didSet {
+            transactionFirst = (billingItems.count > 0) ? 1 : 0
+        }
+    }
+    
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView! {
@@ -40,12 +56,21 @@ class Main: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fetchRequestAll()
+    }
+    
+    private func fetchRequestAll() {
         Service.shared.fetchRequestTransactionItems { [weak self](transactionItems) in
             self?.transactionItems = transactionItems ?? []
+            self?.fetchRequstBilling()
         }
-        
+    }
+    
+    private func fetchRequstBilling() {
         Service.shared.fetchRequestBillingItems { [weak self](billingItems) in
             self?.billingItems = billingItems ?? []
+            self?.countItems = 0
+            self?.transactionFirst = 0
             self?.updateData()
         }
     }
@@ -61,7 +86,7 @@ extension Main: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return billingItems.count > 0 ? transactionItems.count + 1 : transactionItems.count
+        return countItems
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -73,7 +98,7 @@ extension Main: UITableViewDelegate, UITableViewDataSource {
             return cell
         default:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: RegisterCell.customCell) as? CustomTableViewCell else { return UITableViewCell.init() }
-            let transactionItem = transactionItems[indexPath.row - 1]
+            let transactionItem = transactionItems[indexPath.row - transactionFirst]
             cell.configuration(cell: transactionItem, indexPath: indexPath)
             return cell
         }
