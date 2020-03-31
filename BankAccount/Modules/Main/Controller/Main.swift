@@ -25,7 +25,7 @@ enum RegisterCell {
 }
 
 class Main: UIViewController {
-    
+
     var billingItems = [Billing]() // вверхний показатель, коллекция
     var transactionItems = [Transaction]() // нижний показатель, таблица
     
