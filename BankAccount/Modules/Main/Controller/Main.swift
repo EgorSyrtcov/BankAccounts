@@ -85,7 +85,6 @@ class Main: UIViewController {
 extension Main: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return countItems
     }
     
@@ -111,6 +110,21 @@ extension Main: UITableViewDelegate, UITableViewDataSource {
             return Layout.currentCellHeight
         default:
             return Layout.customCellHeight
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            guard let transactionID = transactionItems[indexPath.row - transactionFirst].id else { return }
+            Service.shared.deleteAlamofire(id: transactionID)
+            
+//            Service.shared.deletePost(id: transactionID) { (err) in
+//                if let err = err {
+//                    print("Failed to delete", err)
+//                    return
+//                }
+//                print("Succerrfully deleted post from server")
+//            }
         }
     }
 }
