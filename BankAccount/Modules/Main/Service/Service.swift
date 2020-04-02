@@ -59,26 +59,11 @@ class Service {
         return value
     }
     
-    func deletePost(id: Int, completion: @escaping (Error?) -> ()) {
-        guard let url = URL(string: "https://bankaccounts-andersen.herokuapp.com/transaction\(id)") else { return }
-        
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "DELETE"
-        URLSession.shared.dataTask(with: urlRequest) { (data, resp, err) in
-            if let err = err {
-                completion(err)
-                return
-            }
-            completion(nil)
-        }.resume()
-    }
-    
     func deleteAlamofire(id: Int) {
-        let paramentes: Parameters = ["id" : [id]]
+        let parameters: Parameters = ["id" : id]
+        guard let url = URL(string: "https://bankaccounts-andersen.herokuapp.com/transaction") else { return }
+        Alamofire.request(url, method: .delete, parameters: parameters)
         
-         guard let url = URL(string: "https://bankaccounts-andersen.herokuapp.com/transaction") else { return }
-        
-        Alamofire.request(url, method: .delete, parameters: paramentes)
     }
 }
 

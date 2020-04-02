@@ -25,6 +25,8 @@ enum RegisterCell {
 }
 
 class Main: UIViewController {
+    
+    var refreshControl = UIRefreshControl()
 
     var billingItems = [Billing]() // вверхний показатель, коллекция
     var transactionItems = [Transaction]() // нижний показатель, таблица
@@ -57,6 +59,7 @@ class Main: UIViewController {
         super.viewDidLoad()
         
         fetchRequestAll()
+        addRefreshControl()
     }
     
     private func fetchRequestAll() {
@@ -79,6 +82,18 @@ class Main: UIViewController {
         tableView.reloadData()
         activityIndicator.stopAnimating()
         activityIndicator.isHidden = true
+    }
+    
+    fileprivate func addRefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl.tintColor = UIColor.red
+        refreshControl.addTarget(self, action: #selector(refreshArray), for: .valueChanged)
+        self.tableView.addSubview(refreshControl)
+    }
+    
+    @objc func refreshArray() {
+        tableView.reloadData()
+        refreshControl.endRefreshing()
     }
 }
 
@@ -116,15 +131,10 @@ extension Main: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             guard let transactionID = transactionItems[indexPath.row - transactionFirst].id else { return }
+            let transactionIndex = indexPath.row - transactionFirst
+            print(transactionIndex)
             Service.shared.deleteAlamofire(id: transactionID)
-            
-//            Service.shared.deletePost(id: transactionID) { (err) in
-//                if let err = err {
-//                    print("Failed to delete", err)
-//                    return
-//                }
-//                print("Succerrfully deleted post from server")
-//            }
+            fetchRequestAll()
         }
     }
 }
