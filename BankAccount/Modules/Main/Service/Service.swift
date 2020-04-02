@@ -59,9 +59,9 @@ class Service {
         return value
     }
     
-    func deleteAlamofire(id: Int) {
+    func deleteAlamofire(urlString: String, id: Int) {
         let parameters: Parameters = ["id" : id]
-        guard let url = URL(string: "https://bankaccounts-andersen.herokuapp.com/transaction") else { return }
+        guard let url = URL(string: urlString) else { return }
         Alamofire.request(url, method: .delete, parameters: parameters)
         
     }

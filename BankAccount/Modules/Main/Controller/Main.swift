@@ -11,42 +11,42 @@ import UIKit
 let parseOffKey = "parseOffKey"
 let parseOnKey = "parseOnKey"
 
-enum Layout {
+ enum Layout {
     static let currentCellHeight: CGFloat = 150
     static let customCellHeight: CGFloat = 120
     static let collectionCornerRadius: CGFloat = 40
     static let imageCornerRadiusInCustomCell: CGFloat = 40
 }
 
-enum RegisterCell {
+ enum RegisterCell {
     static let customCell = "CustomTableViewCell"
     static let currentCell = "CollectionInTableViewCell"
     static let collectionViewCell = "CollectionViewCell"
 }
 
-class Main: UIViewController {
+final class Main: UIViewController {
     
-    var refreshControl = UIRefreshControl()
-
-    var billingItems = [Billing]() // вверхний показатель, коллекция
-    var transactionItems = [Transaction]() // нижний показатель, таблица
+    fileprivate var refreshControl = UIRefreshControl()
+    fileprivate let urlDeleteTransaction = "https://bankaccounts-andersen.herokuapp.com/transaction"
+    fileprivate var billingItems = [Billing]() // вверхний показатель, коллекция
+    fileprivate var transactionItems = [Transaction]() // нижний показатель, таблица
     
     // количество numberOfRowsInSection
-    var countItems = 0 {
+    fileprivate var countItems = 0 {
         didSet {
             countItems = billingItems.count > 0 ? (transactionItems.count + 1) : (transactionItems.count)
         }
     }
     // Отнимать единицу в ячейке CustomTableViewCell или нет
-    var transactionFirst = 0 {
+    fileprivate var transactionFirst = 0 {
         didSet {
             transactionFirst = (billingItems.count > 0) ? 1 : 0
         }
     }
     
-    @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var tableView: UITableView! {
+    @IBOutlet fileprivate weak var contentView: UIView!
+    @IBOutlet fileprivate weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet fileprivate weak var tableView: UITableView! {
         didSet {
             let nibName = UINib(nibName: RegisterCell.customCell, bundle: nil)
             tableView.register(nibName, forCellReuseIdentifier: RegisterCell.customCell)
@@ -78,13 +78,13 @@ class Main: UIViewController {
         }
     }
     
-    func updateData() {
+   private func updateData() {
         tableView.reloadData()
         activityIndicator.stopAnimating()
         activityIndicator.isHidden = true
     }
     
-    fileprivate func addRefreshControl() {
+    private func addRefreshControl() {
         refreshControl = UIRefreshControl()
         refreshControl.tintColor = UIColor.red
         refreshControl.addTarget(self, action: #selector(refreshArray), for: .valueChanged)
@@ -133,9 +133,8 @@ extension Main: UITableViewDelegate, UITableViewDataSource {
             guard let transactionID = transactionItems[indexPath.row - transactionFirst].id else { return }
             let transactionIndex = indexPath.row - transactionFirst
             print(transactionIndex)
-            Service.shared.deleteAlamofire(id: transactionID)
+            Service.shared.deleteAlamofire(urlString: urlDeleteTransaction, id: transactionID)
             fetchRequestAll()
         }
     }
 }
-
