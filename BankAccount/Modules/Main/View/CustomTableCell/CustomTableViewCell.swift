@@ -20,8 +20,10 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var moneyLabel: UILabel!
     
     func configuration(cell: Transaction, indexPath: IndexPath) {
-     
-        mainImage.image = UIImage(named: cell.icon ?? "basket")
+        
+        if let imageName = cell.icon, let image = UIImage(named: imageName) {
+            mainImage.image = image
+        }
         
         onlineLabel.text = cell.icon
         timeDayLabel.text = String(describing: cell.date ?? 0)
@@ -30,4 +32,11 @@ class CustomTableViewCell: UITableViewCell {
         let priceString = String(format: "$%.02f", balance)
         moneyLabel.text = priceString
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        mainImage.image = UIImage(named: "basket")
+    }
 }
+

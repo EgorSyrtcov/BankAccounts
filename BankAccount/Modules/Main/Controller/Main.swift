@@ -11,42 +11,43 @@ import UIKit
 let parseOffKey = "parseOffKey"
 let parseOnKey = "parseOnKey"
 
- enum Layout {
+enum Layout {
     static let currentCellHeight: CGFloat = 150
     static let customCellHeight: CGFloat = 120
     static let collectionCornerRadius: CGFloat = 40
     static let imageCornerRadiusInCustomCell: CGFloat = 40
 }
 
- enum RegisterCell {
+enum RegisterCell {
     static let customCell = "CustomTableViewCell"
     static let currentCell = "CollectionInTableViewCell"
     static let collectionViewCell = "CollectionViewCell"
+    static let lastCollectionCell = "LastCollectionCell"
 }
 
-final class Main: UIViewController {
+class Main: UIViewController {
     
-    fileprivate var refreshControl = UIRefreshControl()
-    fileprivate let urlDeleteTransaction = "https://bankaccounts-andersen.herokuapp.com/transaction"
-    fileprivate var billingItems = [Billing]() // вверхний показатель, коллекция
-    fileprivate var transactionItems = [Transaction]() // нижний показатель, таблица
+    private var refreshControl = UIRefreshControl()
+    private let urlDeleteTransaction = "https://bankaccounts-andersen.herokuapp.com/transaction"
+    private var billingItems = [Billing]() // вверхний показатель, коллекция
+    private var transactionItems = [Transaction]() // нижний показатель, таблица
     
     // количество numberOfRowsInSection
-    fileprivate var countItems = 0 {
-        didSet {
-            countItems = billingItems.count > 0 ? (transactionItems.count + 1) : (transactionItems.count)
+    private var countItems: Int {
+        get {
+            return billingItems.count > 0 ? (transactionItems.count + 1) : (transactionItems.count)
         }
     }
     // Отнимать единицу в ячейке CustomTableViewCell или нет
-    fileprivate var transactionFirst = 0 {
-        didSet {
-            transactionFirst = (billingItems.count > 0) ? 1 : 0
+    private var transactionFirst: Int {
+        get {
+            return (billingItems.count > 0) ? 1 : 0
         }
     }
     
-    @IBOutlet fileprivate weak var contentView: UIView!
-    @IBOutlet fileprivate weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet fileprivate weak var tableView: UITableView! {
+    @IBOutlet private weak var contentView: UIView!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var tableView: UITableView! {
         didSet {
             let nibName = UINib(nibName: RegisterCell.customCell, bundle: nil)
             tableView.register(nibName, forCellReuseIdentifier: RegisterCell.customCell)
@@ -63,22 +64,20 @@ final class Main: UIViewController {
     }
     
     private func fetchRequestAll() {
-        Service.shared.fetchRequestTransactionItems { [weak self](transactionItems) in
+        Service.shared.fetchRequestTransactionItems(path: .allTransaction) { [weak self](transactionItems) in
             self?.transactionItems = transactionItems ?? []
             self?.fetchRequstBilling()
         }
     }
     
     private func fetchRequstBilling() {
-        Service.shared.fetchRequestBillingItems { [weak self](billingItems) in
+        Service.shared.fetchRequestBillingItems(path: .allBilling) { [weak self](billingItems) in
             self?.billingItems = billingItems ?? []
-            self?.countItems = 0
-            self?.transactionFirst = 0
             self?.updateData()
         }
     }
     
-   private func updateData() {
+    private func updateData() {
         tableView.reloadData()
         activityIndicator.stopAnimating()
         activityIndicator.isHidden = true
@@ -92,7 +91,7 @@ final class Main: UIViewController {
     }
     
     @objc func refreshArray() {
-        tableView.reloadData()
+        fetchRequestAll()
         refreshControl.endRefreshing()
     }
 }
@@ -129,12 +128,17 @@ extension Main: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            guard let transactionID = transactionItems[indexPath.row - transactionFirst].id else { return }
-            let transactionIndex = indexPath.row - transactionFirst
-            print(transactionIndex)
-            Service.shared.deleteAlamofire(urlString: urlDeleteTransaction, id: transactionID)
-            fetchRequestAll()
+        
+        guard let transactionID = transactionItems[indexPath.row - transactionFirst].id else { return }
+        
+        if editingStyle == .delete && (indexPath.row != 0) {
+            deleteForIdTransaction(id: transactionID)
+            transactionItems.remove(at: indexPath.row - transactionFirst)
+            tableView.reloadData()
         }
+    }
+    
+    func deleteForIdTransaction(id: Int) {
+        Service.shared.deleteAlamofire(path: .transaction, id: id)
     }
 }

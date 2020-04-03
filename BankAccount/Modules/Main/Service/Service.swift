@@ -10,10 +10,10 @@ import Foundation
 import Alamofire
 import AlamofireObjectMapper
 
-
 enum AdressBankAccount: String {
     case allBilling = "allBilling"
     case allTransaction = "allTransaction"
+    case transaction = "transaction"
 }
 
 enum KeyUrl: String {
@@ -21,29 +21,29 @@ enum KeyUrl: String {
 }
 
 class Service {
-
+    
     static var shared = Service()
     private var urlString = ""
     
     init() {
         urlString = getStringUrl(forKey: KeyUrl.adressParse.rawValue)
     }
-
-    func fetchRequestBillingItems(completion: @escaping ([Billing]?) ->()) {
-
-        Alamofire.request("\(urlString)\(AdressBankAccount.allBilling)").responseArray { (response: DataResponse<[Billing]>) in
+    
+    func fetchRequestBillingItems(path: AdressBankAccount, completion: @escaping ([Billing]?) ->()) {
+        
+        Alamofire.request("\(urlString)\(path.rawValue)").responseArray { (response: DataResponse<[Billing]>) in
             var billingItems = [Billing]()
             let billingArray = response.result.value
             
             if let billingArray = billingArray {
                 billingArray.forEach({billingItems.append($0)})
-                 completion(billingItems)
+                completion(billingItems)
             }
         }
     }
     
-    func fetchRequestTransactionItems(completion: @escaping ([Transaction]?) ->()) {
-        Alamofire.request("\(urlString)\(AdressBankAccount.allTransaction)").responseArray { (response: DataResponse<[Transaction]>) in
+    func fetchRequestTransactionItems(path: AdressBankAccount, completion: @escaping ([Transaction]?) ->()) {
+        Alamofire.request("\(urlString)\(path.rawValue)").responseArray { (response: DataResponse<[Transaction]>) in
             var transactionItems = [Transaction]()
             let transactionArray = response.result.value
             
@@ -59,9 +59,9 @@ class Service {
         return value
     }
     
-    func deleteAlamofire(urlString: String, id: Int) {
+    func deleteAlamofire(path: AdressBankAccount, id: Int) {
         let parameters: Parameters = ["id" : id]
-        guard let url = URL(string: urlString) else { return }
+        guard let url = URL(string: urlString + "\(path.rawValue)") else { return }
         Alamofire.request(url, method: .delete, parameters: parameters)
         
     }

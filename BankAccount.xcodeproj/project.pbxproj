@@ -28,6 +28,8 @@
 		2EEBFFF5241FB15300B0C74B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EEBFFF3241FB15300B0C74B /* LaunchScreen.storyboard */; };
 		2EEE3EB8242DC7800063CC36 /* Billing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEE3EB7242DC7800063CC36 /* Billing.swift */; };
 		2EEE3EBA242DC8D10063CC36 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEE3EB9242DC8D10063CC36 /* Transaction.swift */; };
+		2EF096EB24372E4700BD1370 /* LastCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF096E924372E4700BD1370 /* LastCollectionCell.swift */; };
+		2EF096EC24372E4700BD1370 /* LastCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EF096EA24372E4700BD1370 /* LastCollectionCell.xib */; };
 		2EF2C4352421F2F0004BEC91 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF2C4332421F2F0004BEC91 /* CustomTableViewCell.swift */; };
 		2EF2C4362421F2F0004BEC91 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EF2C4342421F2F0004BEC91 /* CustomTableViewCell.xib */; };
 		5686055F9A55557CF3AF7B61 /* Pods_BankAccount.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6EF49CA19D0175EB10FC9B8 /* Pods_BankAccount.framework */; };
@@ -61,6 +63,8 @@
 		2EEBFFF6241FB15300B0C74B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2EEE3EB7242DC7800063CC36 /* Billing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Billing.swift; sourceTree = "<group>"; };
 		2EEE3EB9242DC8D10063CC36 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		2EF096E924372E4700BD1370 /* LastCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastCollectionCell.swift; sourceTree = "<group>"; };
+		2EF096EA24372E4700BD1370 /* LastCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LastCollectionCell.xib; sourceTree = "<group>"; };
 		2EF2C4332421F2F0004BEC91 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		2EF2C4342421F2F0004BEC91 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		B815978FD8EFF366CE8F914E /* Pods-BankAccount.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BankAccount.debug.xcconfig"; path = "Target Support Files/Pods-BankAccount/Pods-BankAccount.debug.xcconfig"; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				2EBC83EB241FC34F00698837 /* Main.storyboard */,
+				2EF096E824372DDC00BD1370 /* LastCollectionCell */,
 				2E41F38D242B642900B05766 /* CollectionViewCell */,
 				2EEAFC732423AE28008DFE46 /* CollectionInTableViewCell */,
 				2EF2C43924222C0E004BEC91 /* CustomTableCell */,
@@ -328,6 +333,15 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
+		2EF096E824372DDC00BD1370 /* LastCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				2EF096E924372E4700BD1370 /* LastCollectionCell.swift */,
+				2EF096EA24372E4700BD1370 /* LastCollectionCell.xib */,
+			);
+			path = LastCollectionCell;
+			sourceTree = "<group>";
+		};
 		2EF2C43924222C0E004BEC91 /* CustomTableCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -418,6 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EBC83EC241FC34F00698837 /* Main.storyboard in Resources */,
+				2EF096EC24372E4700BD1370 /* LastCollectionCell.xib in Resources */,
 				2EEBFFF5241FB15300B0C74B /* LaunchScreen.storyboard in Resources */,
 				2EF2C4362421F2F0004BEC91 /* CustomTableViewCell.xib in Resources */,
 				2E6F12332424C39500786E2C /* CollectionInTableViewCell.xib in Resources */,
@@ -484,6 +499,7 @@
 				2EEBFFEB241FB15000B0C74B /* AppDelegate.swift in Sources */,
 				2EF2C4352421F2F0004BEC91 /* CustomTableViewCell.swift in Sources */,
 				2EEB000B241FB35A00B0C74B /* UIViewControllerStoryboard.swift in Sources */,
+				2EF096EB24372E4700BD1370 /* LastCollectionCell.swift in Sources */,
 				2EEB000D241FB37100B0C74B /* Color.swift in Sources */,
 				2E6F122624249C4700786E2C /* EmailVC.swift in Sources */,
 				2E6F121F242499D600786E2C /* AccountVC.swift in Sources */,
