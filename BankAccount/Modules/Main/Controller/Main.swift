@@ -18,17 +18,10 @@ enum Layout {
     static let imageCornerRadiusInCustomCell: CGFloat = 40
 }
 
-enum RegisterCell {
-    static let customCell = "CustomTableViewCell"
-    static let currentCell = "CollectionInTableViewCell"
-    static let collectionViewCell = "CollectionViewCell"
-    static let lastCollectionCell = "LastCollectionCell"
-}
-
 class Main: UIViewController {
     
     private var refreshControl = UIRefreshControl()
-    private let urlDeleteTransaction = "https://bankaccounts-andersen.herokuapp.com/transaction"
+  
     private var billingItems = [Billing]() // вверхний показатель, коллекция
     private var transactionItems = [Transaction]() // нижний показатель, таблица
     
@@ -64,14 +57,14 @@ class Main: UIViewController {
     }
     
     private func fetchRequestAll() {
-        Service.shared.fetchRequestTransactionItems(path: .allTransaction) { [weak self](transactionItems) in
+        Service.shared.fetchRequestTransactionItems() { [weak self](transactionItems) in
             self?.transactionItems = transactionItems ?? []
             self?.fetchRequstBilling()
         }
     }
     
     private func fetchRequstBilling() {
-        Service.shared.fetchRequestBillingItems(path: .allBilling) { [weak self](billingItems) in
+        Service.shared.fetchRequestBillingItems() { [weak self](billingItems) in
             self?.billingItems = billingItems ?? []
             self?.updateData()
         }
