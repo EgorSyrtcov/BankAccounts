@@ -18,33 +18,29 @@ enum Layout {
     static let imageCornerRadiusInCustomCell: CGFloat = 40
 }
 
-enum RegisterCell {
-    static let customCell = "CustomTableViewCell"
-    static let currentCell = "CollectionInTableViewCell"
-    static let collectionViewCell = "CollectionViewCell"
-}
-
 class Main: UIViewController {
-
-    var billingItems = [Billing]() // вверхний показатель, коллекция
-    var transactionItems = [Transaction]() // нижний показатель, таблица
+    
+    private var refreshControl = UIRefreshControl()
+  
+    private var billingItems = [Billing]() // вверхний показатель, коллекция
+    private var transactionItems = [Transaction]() // нижний показатель, таблица
     
     // количество numberOfRowsInSection
-    var countItems = 0 {
-        didSet {
-            countItems = billingItems.count > 0 ? (transactionItems.count + 1) : (transactionItems.count)
+    private var countItems: Int {
+        get {
+            return billingItems.count > 0 ? (transactionItems.count + 1) : (transactionItems.count)
         }
     }
     // Отнимать единицу в ячейке CustomTableViewCell или нет
-    var transactionFirst = 0 {
-        didSet {
-            transactionFirst = (billingItems.count > 0) ? 1 : 0
+    private var transactionFirst: Int {
+        get {
+            return (billingItems.count > 0) ? 1 : 0
         }
     }
     
-    @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var tableView: UITableView! {
+    @IBOutlet private weak var contentView: UIView!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var tableView: UITableView! {
         didSet {
             let nibName = UINib(nibName: RegisterCell.customCell, bundle: nil)
             tableView.register(nibName, forCellReuseIdentifier: RegisterCell.customCell)
@@ -57,35 +53,45 @@ class Main: UIViewController {
         super.viewDidLoad()
         
         fetchRequestAll()
+        addRefreshControl()
     }
     
     private func fetchRequestAll() {
-        Service.shared.fetchRequestTransactionItems { [weak self](transactionItems) in
+        Service.shared.fetchRequestTransactionItems() { [weak self](transactionItems) in
             self?.transactionItems = transactionItems ?? []
             self?.fetchRequstBilling()
         }
     }
     
     private func fetchRequstBilling() {
-        Service.shared.fetchRequestBillingItems { [weak self](billingItems) in
+        Service.shared.fetchRequestBillingItems() { [weak self](billingItems) in
             self?.billingItems = billingItems ?? []
-            self?.countItems = 0
-            self?.transactionFirst = 0
             self?.updateData()
         }
     }
     
-    func updateData() {
+    private func updateData() {
         tableView.reloadData()
         activityIndicator.stopAnimating()
         activityIndicator.isHidden = true
+    }
+    
+    private func addRefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl.tintColor = UIColor.red
+        refreshControl.addTarget(self, action: #selector(refreshArray), for: .valueChanged)
+        self.tableView.addSubview(refreshControl)
+    }
+    
+    @objc func refreshArray() {
+        fetchRequestAll()
+        refreshControl.endRefreshing()
     }
 }
 
 extension Main: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return countItems
     }
     
@@ -113,5 +119,19 @@ extension Main: UITableViewDelegate, UITableViewDataSource {
             return Layout.customCellHeight
         }
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        guard let transactionID = transactionItems[indexPath.row - transactionFirst].id else { return }
+        
+        if editingStyle == .delete && (indexPath.row != 0) {
+            deleteForIdTransaction(id: transactionID)
+            transactionItems.remove(at: indexPath.row - transactionFirst)
+            tableView.reloadData()
+        }
+    }
+    
+    func deleteForIdTransaction(id: Int) {
+        Service.shared.deleteAlamofire(path: .transaction, id: id)
+    }
 }
-

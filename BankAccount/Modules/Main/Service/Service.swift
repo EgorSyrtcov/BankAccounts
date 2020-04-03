@@ -10,10 +10,10 @@ import Foundation
 import Alamofire
 import AlamofireObjectMapper
 
-
 enum AdressBankAccount: String {
     case allBilling = "allBilling"
     case allTransaction = "allTransaction"
+    case transaction = "transaction"
 }
 
 enum KeyUrl: String {
@@ -21,7 +21,7 @@ enum KeyUrl: String {
 }
 
 class Service {
-
+    
     static var shared = Service()
     private var urlString = ""
     
@@ -29,28 +29,15 @@ class Service {
         urlString = getStringUrl(forKey: KeyUrl.adressParse.rawValue)
     }
     
-//    func fetchRequestItems<T>(urlString: String, completion: @escaping ([T]?) ->()) {
-//        Alamofire.request(urlString).responseArray {
-//            (response: DataResponse<[T]>) in
-//            var items = [T]()
-//            let array = response.result.value
-//
-//            if let array = array {
-//                array.forEach({items.append($0)})
-//                completion(items)
-//            }
-//        }
-//    }
-
     func fetchRequestBillingItems(completion: @escaping ([Billing]?) ->()) {
-
+        
         Alamofire.request("\(urlString)\(AdressBankAccount.allBilling)").responseArray { (response: DataResponse<[Billing]>) in
             var billingItems = [Billing]()
             let billingArray = response.result.value
             
             if let billingArray = billingArray {
                 billingArray.forEach({billingItems.append($0)})
-                 completion(billingItems)
+                completion(billingItems)
             }
         }
     }
@@ -70,6 +57,13 @@ class Service {
     func getStringUrl(forKey key: String) -> String {
         guard let value = Bundle.main.infoDictionary?[key] as? String else { fatalError("Could not find value for key \(key) in Info.plist") }
         return value
+    }
+    
+    func deleteAlamofire(path: AdressBankAccount, id: Int) {
+        let parameters: Parameters = ["id" : id]
+        guard let url = URL(string: urlString + "\(path.rawValue)") else { return }
+        Alamofire.request(url, method: .delete, parameters: parameters)
+        
     }
 }
 
