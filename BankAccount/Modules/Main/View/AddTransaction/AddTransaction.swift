@@ -10,9 +10,7 @@ import UIKit
 
 class AddTransaction: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        view.backgroundColor = .red
+    @IBAction func backVC(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
 }

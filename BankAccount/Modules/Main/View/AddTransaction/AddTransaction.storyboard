@@ -17,7 +17,23 @@
                     <view key="view" contentMode="scaleToFill" id="kUV-gL-69M">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLq-oI-sjU">
+                                <rect key="frame" x="164" y="418" width="86" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="backVC:" destination="NIk-p0-Iex" eventType="touchUpInside" id="Qlz-tB-DNO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.1439521903" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fLq-oI-sjU" firstAttribute="centerY" secondItem="kUV-gL-69M" secondAttribute="centerY" id="QWe-Bd-Rec"/>
+                            <constraint firstItem="fLq-oI-sjU" firstAttribute="centerX" secondItem="kUV-gL-69M" secondAttribute="centerX" id="pTF-Py-EOy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="uS9-yo-XKH"/>
                     </view>
                 </viewController>
