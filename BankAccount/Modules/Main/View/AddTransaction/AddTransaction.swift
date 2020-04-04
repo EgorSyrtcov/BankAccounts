@@ -9,8 +9,16 @@
 import UIKit
 
 class AddTransaction: UIViewController {
+    
+    @IBOutlet weak var dateTextField: UITextField!
+    @IBOutlet weak var balanceTextField: UITextField!
 
-    @IBAction func backVC(_ sender: UIButton) {
+    @IBAction func cancelButton(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func okButton(_ sender: UIButton) {
+        print("OK")
+    }
+    
 }

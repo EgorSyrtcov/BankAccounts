@@ -22,7 +22,7 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fan-PJ-MVJ">
                         <rect key="frame" x="10" y="32" width="221" height="47"/>
                         <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                        <state key="normal" title="Add Transaction"/>
+                        <state key="normal" title="+ Add Billing"/>
                         <connections>
                             <action selector="addTransactionButton:" destination="uif-77-gAO" eventType="touchUpInside" id="Vh3-CY-ysp"/>
                         </connections>
