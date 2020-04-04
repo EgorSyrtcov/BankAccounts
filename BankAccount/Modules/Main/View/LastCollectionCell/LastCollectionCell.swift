@@ -19,4 +19,14 @@ class LastCollectionCell: UICollectionViewCell {
     private func setupCell() {
         layer.cornerRadius = Layout.collectionCornerRadius
     }
+    
+    @IBAction func addTransactionButton(_ sender: UIButton) {
+        
+        let vc = parentViewController
+        
+        let storyBoard = UIStoryboard(name: "AddTransaction", bundle: nil)
+        let addTransaction = storyBoard.instantiateViewController(withIdentifier: "AddTransaction") as! AddTransaction
+        
+        vc?.present(addTransaction, animated: true, completion: nil)
+    }
 }

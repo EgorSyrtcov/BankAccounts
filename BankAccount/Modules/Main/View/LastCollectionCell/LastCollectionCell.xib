@@ -23,6 +23,9 @@
                         <rect key="frame" x="10" y="32" width="221" height="47"/>
                         <fontDescription key="fontDescription" type="system" pointSize="29"/>
                         <state key="normal" title="Add Transaction"/>
+                        <connections>
+                            <action selector="addTransactionButton:" destination="uif-77-gAO" eventType="touchUpInside" id="Vh3-CY-ysp"/>
+                        </connections>
                     </button>
                 </subviews>
             </view>
