@@ -22,11 +22,8 @@ class LastCollectionCell: UICollectionViewCell {
     
     @IBAction func addTransactionButton(_ sender: UIButton) {
         
-        let vc = parentViewController
+        let addTransaction = AddTransaction.initFromStoryboard()
         
-        let storyBoard = UIStoryboard(name: "AddTransaction", bundle: nil)
-        let addTransaction = storyBoard.instantiateViewController(withIdentifier: "AddTransaction") as! AddTransaction
-        
-        vc?.present(addTransaction, animated: true, completion: nil)
+        parentViewController?.present(addTransaction, animated: true, completion: nil)
     }
 }
