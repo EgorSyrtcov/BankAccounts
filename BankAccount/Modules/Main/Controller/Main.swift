@@ -52,8 +52,8 @@ class Main: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fetchRequestAll()
-        addRefreshControl()
+         addRefreshControl()
+         fetchRequestAll()
     }
     
     private func fetchRequestAll() {

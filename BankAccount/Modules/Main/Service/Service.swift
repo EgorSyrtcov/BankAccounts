@@ -14,6 +14,7 @@ enum AdressBankAccount: String {
     case allBilling = "allBilling"
     case allTransaction = "allTransaction"
     case transaction = "transaction"
+    case newBilling = "newBilling"
 }
 
 enum KeyUrl: String {
@@ -64,6 +65,12 @@ class Service {
         guard let url = URL(string: urlString + "\(path.rawValue)") else { return }
         Alamofire.request(url, method: .delete, parameters: parameters)
         
+    }
+    
+    func postBilling(date: Int, balance: Int) {
+        let params: [String: Any] = ["date": date, "balance": balance, "ownerID": 1]
+        guard let url = URL(string:"\(urlString)\(AdressBankAccount.newBilling)") else { return }
+        Alamofire.request(url, method: .post, parameters: params)
     }
 }
 
