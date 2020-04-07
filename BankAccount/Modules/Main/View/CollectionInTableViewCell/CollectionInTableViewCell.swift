@@ -15,7 +15,8 @@ enum SizeForItemCell {
 
 class CollectionInTableViewCell: UITableViewCell {
     
-    var billingItems = [Billing]()
+    private var billingItems = [Billing]()
+    
     var collectionCount: Int {
         get {
             return billingItems.count + 1
@@ -30,6 +31,13 @@ extension CollectionInTableViewCell: UICollectionViewDelegate, UICollectionViewD
         super.awakeFromNib()
         
         setupCollectionView()
+    }
+    
+    func configurate(with items: [Billing]) {
+        billingItems.removeAll()
+        billingItems = items
+        guard !collectionView.visibleCells.isEmpty else { return }
+        collectionView.reloadData()
     }
     
     private func setupCollectionView() {

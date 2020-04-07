@@ -8,8 +8,14 @@
 
 import UIKit
 
+extension Notification.Name {
+    static let updateBillingData = NSNotification.Name.init("updateBillingData")
+}
+
 class AddTransaction: UIViewController {
  
+    let notificationCenter = NotificationCenter.default
+    
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var balanceTextField: UITextField!
     
@@ -27,11 +33,9 @@ class AddTransaction: UIViewController {
             newBalance.isEmpty == false else { setupAlertController(); return }
         let newBalanceInt = Int(newBalance) ?? 0
         
-        dismiss(animated: true) {
-           Main.shared.fetchRequestAll()
-        }
-        
-        //Service.shared.postBilling(date: newDataInt, balance: newBalanceInt)
+        Service.shared.postBilling(date: newDataInt, balance: newBalanceInt)
+        notificationCenter.post(name: .updateBillingData, object: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     func setupAlertController() {

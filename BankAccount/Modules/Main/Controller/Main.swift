@@ -21,7 +21,7 @@ enum Layout {
 class Main: UIViewController {
     
     private var refreshControl = UIRefreshControl()
-  
+    
     private var billingItems = [Billing]() // вверхний показатель, коллекция
     private var transactionItems = [Transaction]() // нижний показатель, таблица
     
@@ -49,11 +49,23 @@ class Main: UIViewController {
         }
     }
     
+    let notificationCenter = NotificationCenter.default
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         addRefreshControl()
-         fetchRequestAll()
+        addRefreshControl()
+        fetchRequestAll()
+        notificationCenter.addObserver(self, selector: #selector(updateTableView),
+                                       name: .updateBillingData, object: nil)
+    }
+    
+    deinit {
+        notificationCenter.removeObserver(self)
+    }
+    
+    @objc func updateTableView(notification: Notification) {
+        fetchRequestAll()
     }
     
     private func fetchRequestAll() {
@@ -100,7 +112,7 @@ extension Main: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.row {
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: RegisterCell.currentCell) as? CollectionInTableViewCell else { return UITableViewCell.init() }
-            cell.billingItems = billingItems
+            cell.configurate(with: billingItems)
             return cell
         default:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: RegisterCell.customCell) as? CustomTableViewCell else { return UITableViewCell.init() }
