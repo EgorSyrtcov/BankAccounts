@@ -58,6 +58,8 @@ class Main: UIViewController {
         fetchRequestAll()
         notificationCenter.addObserver(self, selector: #selector(updateTableView),
                                        name: .updateBillingData, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(updateTableView),
+                                       name: .updateTransactionData, object: nil)
     }
     
     deinit {
