@@ -17,17 +17,103 @@
                     <view key="view" contentMode="scaleToFill" id="fDi-aB-Mhc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.13088402430000001" green="1" blue="0.070983554530000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddTransaction" translatesAutoresizingMaskIntoConstraints="NO" id="ttq-Mj-LUE">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="QOU-Hq-weQ">
+                                <rect key="frame" x="40" y="220" width="334" height="180"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="334" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Data" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D2R-L8-m9W">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="334" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Icon" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sbb-XW-2bn">
+                                        <rect key="frame" x="0.0" y="50" width="334" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sum" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G9f-Ur-S40">
+                                        <rect key="frame" x="0.0" y="100" width="334" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uRO-Hj-Vlh">
+                                        <rect key="frame" x="0.0" y="150" width="334" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MrG-zW-pf4">
+                                <rect key="frame" x="104" y="440" width="206" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="206" id="LWv-V2-C30"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="tintColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="OK">
+                                    <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="okButtonAction:" destination="hTy-PS-Lgm" eventType="touchUpInside" id="yEz-cq-Yuz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cR-1h-ikC">
+                                <rect key="frame" x="104" y="513" width="206" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="206" id="Xce-2L-AOZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="tintColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButtonAction:" destination="hTy-PS-Lgm" eventType="touchUpInside" id="84g-WD-JGx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ttq-Mj-LUE" firstAttribute="top" secondItem="QOU-Hq-weQ" secondAttribute="bottom" constant="-400" id="0nV-qK-ZLk"/>
+                            <constraint firstItem="4cR-1h-ikC" firstAttribute="leading" secondItem="MrG-zW-pf4" secondAttribute="leading" id="5cZ-dW-YQN"/>
+                            <constraint firstAttribute="bottom" secondItem="ttq-Mj-LUE" secondAttribute="bottom" id="8K8-US-Kd4"/>
+                            <constraint firstItem="ttq-Mj-LUE" firstAttribute="trailing" secondItem="h6t-S9-U9P" secondAttribute="trailing" id="GQS-5W-xsn"/>
+                            <constraint firstItem="ttq-Mj-LUE" firstAttribute="leading" secondItem="h6t-S9-U9P" secondAttribute="leading" id="Nz2-1f-als"/>
+                            <constraint firstItem="4cR-1h-ikC" firstAttribute="height" secondItem="MrG-zW-pf4" secondAttribute="height" id="OTz-FF-BpT"/>
+                            <constraint firstItem="h6t-S9-U9P" firstAttribute="trailing" secondItem="QOU-Hq-weQ" secondAttribute="trailing" constant="40" id="Z4b-DM-LWG"/>
+                            <constraint firstItem="4cR-1h-ikC" firstAttribute="width" secondItem="MrG-zW-pf4" secondAttribute="width" id="hxV-OQ-E1n"/>
+                            <constraint firstItem="MrG-zW-pf4" firstAttribute="centerX" secondItem="uRO-Hj-Vlh" secondAttribute="centerX" id="jpf-NB-RrI"/>
+                            <constraint firstItem="QOU-Hq-weQ" firstAttribute="leading" secondItem="h6t-S9-U9P" secondAttribute="leading" constant="40" id="neo-rj-8NX"/>
+                            <constraint firstItem="MrG-zW-pf4" firstAttribute="top" secondItem="QOU-Hq-weQ" secondAttribute="bottom" constant="40" id="oQ8-0X-IGR"/>
+                            <constraint firstItem="ttq-Mj-LUE" firstAttribute="top" secondItem="fDi-aB-Mhc" secondAttribute="top" id="uO0-za-zb4"/>
+                            <constraint firstItem="4cR-1h-ikC" firstAttribute="top" secondItem="MrG-zW-pf4" secondAttribute="bottom" constant="31" id="xSc-bz-078"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="h6t-S9-U9P"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="account" id="ngw-dE-L5M"/>
+                    <tabBarItem key="tabBarItem" title="" image="money" id="ngw-dE-L5M"/>
+                    <connections>
+                        <outlet property="buttonCancel" destination="4cR-1h-ikC" id="7bS-uZ-RYd"/>
+                        <outlet property="buttonOk" destination="MrG-zW-pf4" id="xbL-9T-i4e"/>
+                        <outlet property="dateTextField" destination="D2R-L8-m9W" id="Cw6-4D-h2I"/>
+                        <outlet property="iconTextField" destination="sbb-XW-2bn" id="bwc-kW-NfO"/>
+                        <outlet property="sumTextField" destination="G9f-Ur-S40" id="IJr-rf-A1t"/>
+                        <outlet property="titleTextField" destination="uRO-Hj-Vlh" id="nmJ-s1-Y7j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b91-A6-UMJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="562" y="80"/>
+            <point key="canvasLocation" x="560.86956521739137" y="79.6875"/>
         </scene>
     </scenes>
     <resources>
-        <image name="account" width="24" height="24"/>
+        <image name="AddTransaction" width="187.5" height="333.5"/>
+        <image name="money" width="32" height="32"/>
     </resources>
 </document>

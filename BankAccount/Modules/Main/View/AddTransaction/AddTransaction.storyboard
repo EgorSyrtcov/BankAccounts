@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NIk-p0-Iex">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Transaction-->
+        <scene sceneID="zOP-zM-Akj">
+            <objects>
+                <viewController storyboardIdentifier="AddTransaction" id="NIk-p0-Iex" customClass="AddTransaction" customModule="BankAccount" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleAspectFit" id="kUV-gL-69M">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Login Screen" translatesAutoresizingMaskIntoConstraints="NO" id="n7e-Hu-Y1x">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="dCQ-Bx-v4T">
+                                <rect key="frame" x="101.5" y="513" width="211" height="42"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yeh-sc-PsV">
+                                        <rect key="frame" x="0.0" y="0.0" width="76" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" red="0.50392627716064453" green="0.08844391256570816" blue="0.22347000241279602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelButton:" destination="NIk-p0-Iex" eventType="touchUpInside" id="TPz-2T-Gc7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3V-bg-fMb">
+                                        <rect key="frame" x="176" y="0.0" width="35" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="OK">
+                                            <color key="titleColor" red="0.50392627720000005" green="0.088443912570000005" blue="0.22347000240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="okButton:" destination="NIk-p0-Iex" eventType="touchUpInside" id="wzc-7a-bUK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JyZ-8B-654">
+                                <rect key="frame" x="20" y="413" width="374" height="70"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dY4-IU-pio">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter balance" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y7q-Yr-tzY">
+                                        <rect key="frame" x="0.0" y="40" width="374" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="n7e-Hu-Y1x" firstAttribute="top" secondItem="uS9-yo-XKH" secondAttribute="top" id="8xN-mk-17J"/>
+                            <constraint firstItem="JyZ-8B-654" firstAttribute="leading" secondItem="uS9-yo-XKH" secondAttribute="leading" constant="20" id="Ovp-0O-NLi"/>
+                            <constraint firstItem="n7e-Hu-Y1x" firstAttribute="top" secondItem="uS9-yo-XKH" secondAttribute="top" id="Rjk-cn-dDX"/>
+                            <constraint firstItem="dCQ-Bx-v4T" firstAttribute="centerX" secondItem="kUV-gL-69M" secondAttribute="centerX" id="U5m-dX-zOF"/>
+                            <constraint firstItem="uS9-yo-XKH" firstAttribute="bottom" secondItem="n7e-Hu-Y1x" secondAttribute="bottom" id="aFF-2a-lsI"/>
+                            <constraint firstItem="JyZ-8B-654" firstAttribute="centerX" secondItem="kUV-gL-69M" secondAttribute="centerX" id="gHW-vW-kLD"/>
+                            <constraint firstItem="uS9-yo-XKH" firstAttribute="trailing" secondItem="n7e-Hu-Y1x" secondAttribute="trailing" id="geG-KF-TAe"/>
+                            <constraint firstItem="JyZ-8B-654" firstAttribute="centerY" secondItem="kUV-gL-69M" secondAttribute="centerY" id="lBK-ez-KKz"/>
+                            <constraint firstItem="uS9-yo-XKH" firstAttribute="trailing" secondItem="JyZ-8B-654" secondAttribute="trailing" constant="20" id="oA3-Df-Aj8"/>
+                            <constraint firstItem="n7e-Hu-Y1x" firstAttribute="leading" secondItem="uS9-yo-XKH" secondAttribute="leading" id="orU-eu-A3W"/>
+                            <constraint firstItem="uS9-yo-XKH" firstAttribute="bottom" secondItem="n7e-Hu-Y1x" secondAttribute="bottom" id="pv0-gu-cY2"/>
+                            <constraint firstItem="uS9-yo-XKH" firstAttribute="trailing" secondItem="n7e-Hu-Y1x" secondAttribute="trailing" id="sao-Dr-yS3"/>
+                            <constraint firstItem="dCQ-Bx-v4T" firstAttribute="top" secondItem="y7q-Yr-tzY" secondAttribute="bottom" constant="30" id="vxP-30-DQ4"/>
+                            <constraint firstItem="n7e-Hu-Y1x" firstAttribute="leading" secondItem="uS9-yo-XKH" secondAttribute="leading" id="xBQ-5x-xrV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uS9-yo-XKH"/>
+                    </view>
+                    <connections>
+                        <outlet property="balanceTextField" destination="y7q-Yr-tzY" id="QCG-8j-30X"/>
+                        <outlet property="dateTextField" destination="dY4-IU-pio" id="OYM-Q4-ewO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a9r-aL-X9C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-81.159420289855078" y="-138.61607142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Login Screen" width="375" height="667"/>
+    </resources>
+</document>
