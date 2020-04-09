@@ -73,9 +73,9 @@ class Service {
         guard let url = URL(string:"\(urlString)\(AdressBankAccount.newBilling)") else { return }
         Alamofire.request(url, method: .post, parameters: params)
     }
-    
-    func postTransaction(date: Int, icon: String, sum: Int, title: String) {
-        let params: [String: Any] = ["date": date, "icon": icon, "sum": sum, "title" : title, "ownerID": 1]
+
+    func postTransaction(transaction: Transaction) {
+        let params: [String: Any] = ["date": transaction.date ?? "", "icon": transaction.icon ?? "", "sum": transaction.sum ?? "", "title" : transaction.title ?? "", "ownerID": 1]
         guard let url = URL(string:"\(urlString)\(AdressBankAccount.newTransaction)") else { return }
         Alamofire.request(url, method: .post, parameters: params)
     }

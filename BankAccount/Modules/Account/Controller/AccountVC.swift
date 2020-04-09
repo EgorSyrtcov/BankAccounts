@@ -57,20 +57,22 @@ class AccountVC: UIViewController {
     @IBAction func okButtonAction(_ sender: UIButton) {
         
         guard let newDate = dateTextField.text,
-            newDate.isEmpty == false else { setupAlertController(); return }
+            newDate.isEmpty == false else { AlertShow.shared.alert(view: self); return }
         let newDataInt = Int(newDate) ?? 0
         
         guard let newIcon = iconTextField.text,
-            newIcon.isEmpty == false else { setupAlertController(); return }
+            newIcon.isEmpty == false else { AlertShow.shared.alert(view: self); return }
         
         guard let newSum = sumTextField.text,
-            newSum.isEmpty == false else { setupAlertController(); return }
+            newSum.isEmpty == false else { AlertShow.shared.alert(view: self); return }
         let newSumInt = Int(newSum) ?? 0
         
         guard let newTitle = titleTextField.text,
-            newTitle.isEmpty == false else { setupAlertController(); return }
+            newTitle.isEmpty == false else { AlertShow.shared.alert(view: self); return }
         
-       Service.shared.postTransaction(date: newDataInt, icon: newIcon, sum: newSumInt, title: newTitle)
+        let transaction = Transaction(date: newDataInt, icon: newIcon, id: nil, owner: nil, ownerID: 1, sum: newSumInt, title: newTitle)
+        
+       Service.shared.postTransaction(transaction: transaction)
        notificationCenter.post(name: .updateTransactionData, object: nil)
         self.tabBarController?.selectedIndex = 0
     }
