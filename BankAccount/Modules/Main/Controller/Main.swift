@@ -54,6 +54,11 @@ class Main: UIViewController {
         
         fetchRequestAll()
         addRefreshControl()
+        sayHello()
+    }
+    
+    func sayHello() {
+        print("Hello")
     }
     
     private func fetchRequestAll() {
