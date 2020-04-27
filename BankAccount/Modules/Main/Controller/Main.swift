@@ -54,6 +54,13 @@ class Main: UIViewController {
         
         fetchRequestAll()
         addRefreshControl()
+        
+        sayHelloEgor()
+    }
+    
+    private func sayHelloEgor() {
+        print("Hello Egor")
+        print("Hello Swift")
     }
     
     private func fetchRequestAll() {
